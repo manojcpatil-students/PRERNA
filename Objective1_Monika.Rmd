@@ -1,0 +1,209 @@
+---
+title: "Untitled"
+author: "Badgujar Monika Sanjay"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Load Required Libraries
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(psych)
+library(FactoMineR)    # Advanced EDA tools
+library(Factoshiny)    # Interactive visualization
+library(corrplot)      # Correlation heatmap
+library(dplyr)  
+
+```
+
+# Load the Dataset
+```{r}
+
+data <- read_excel("C:\\Users\\hp\\Documents\\GitHub\\PRERNA\\SurveyData.xlsx",sheet=1)
+
+```
+
+# View Data Structure
+```{r}
+
+str(data)
+summary(data)
+
+
+```
+
+# Count Missing Values
+```{r}
+colSums(is.na(data))
+```
+
+# Impute Missing Values (Numerical Columns)
+```{r}
+
+data <- data %>%
+  mutate(across(where(is.numeric), ~ ifelse(is.na(.), median(., na.rm = TRUE), .)))
+
+```
+
+## Distribution Analysis
+```{r}
+# Histogram for Numerical Variables
+str(data$loan_amount)
+str(data$annual_income)
+
+# Clean and Convert to Numeric
+data$loan_amount <- as.numeric(gsub("[^0-9.]", "", data$loan_amount))
+# Clean and Convert to Numeric
+data$annual_income <- as.numeric(gsub("[^0-9.]", "", data$annual_income))
+
+# Now Check Again
+hist(data$loan_amount, 
+     main = "Loan Amount Distribution", 
+     col = "skyblue", 
+     xlab = "Loan Amount", 
+     breaks = 30)
+
+hist(data$annual_income, 
+     main = "Annual Income Distribution", 
+     col = "orange", 
+     xlab = "Annual Income", 
+     breaks = 30)
+
+
+
+
+
+```
+##Boxplot for Outlier Detection
+```{r}
+# Boxplot for Outlier Detection
+boxplot(data$loan_amount, main = "Outlier Detection in Loan Amount", 
+        col = "red", horizontal = TRUE)
+
+boxplot(data$annual_income, main = "Outlier Detection in Annual Income", 
+        col = "green", horizontal = TRUE)
+
+```
+# Bar Plot for Categorical Variables
+```{r}
+# Bar Plot for Farmer Groups
+ggplot(data, aes(x = FarmersGroup)) +
+  geom_bar(fill = "purple") +
+  labs(title = "Farmer Group Distribution")
+
+
+ggplot(data, aes(x = gender)) + 
+  geom_bar(fill = "orange", color = "black") +
+  theme_minimal() + 
+  labs(title = "Gender Distribution", x = "Gender", y = "Count")
+```
+
+```{r}
+ggplot(data, aes(x = annual_income, y = loan_amount)) +
+  geom_point(color = "blue", alpha = 0.5) +
+  labs(title = "Loan Amount vs Annual Income",
+       x = "Annual Income", y = "Loan Amount")
+
+```
+
+
+
+```{r}
+ggplot(data, aes(x = as.factor(bpl_status), y = loan_amount)) +
+  geom_boxplot(fill = "coral") +
+  labs(title = "Loan Amount Distribution by BPL Status")
+
+```
+
+##Perform Factor Analysis
+```{r}
+str(data[, 122:140])  # Check the data types of selected columns
+# Convert only factor or character columns to numeric
+fa_data <- data[, 122:140]  # Select columns
+
+# Check if columns are numeric or categorical
+fa_data <- as.data.frame(lapply(fa_data, function(x) {
+  if (is.factor(x) | is.character(x)) {
+    as.numeric(as.factor(x))  # Convert factors/characters to numeric levels
+  } else {
+    x  # Keep numeric columns unchanged
+  }
+}))
+
+# Check for missing values
+summary(fa_data)
+
+# Count how many missing values remain
+colSums(is.na(fa_data))
+
+# Remove rows only if a few NAs exist; otherwise, impute missing values
+fa_data <- na.omit(fa_data)  # OR use imputation methods if too many NAs
+
+# Verify data structure again
+str(fa_data)
+cor_matrix <- cor(fa_data, use = "pairwise.complete.obs")  # Allows partial data
+print(cor_matrix)
+```
+
+# Check for factorability using Bartlett's test
+```{r}
+
+bartlett.test(fa_data)
+```
+#conclusion
+Bartlett’s test of sphericity was performed to evaluate whether the correlation matrix significantly differs from an identity matrix, indicating the appropriateness of the data for factor analysis. The test produced a chi-square statistic of 154.62 with 18 degrees of freedom and a p-value < 2.2e-16.
+
+Given the highly significant p-value (p < 0.05), we reject the null hypothesis, which assumes that the variables are uncorrelated. This result confirms that the dataset exhibits sufficient intercorrelations to proceed with factor analysis. Consequently, the data is deemed suitable for dimensionality reduction and latent factor extraction.
+# Check Kaiser-Meyer-Olkin (KMO) test (sampling adequacy)
+```{r}
+kmo_result <- KMO(fa_data)
+print(kmo_result)
+```
+##conclusion
+The KMO test was conducted to assess the suitability of the dataset for factor analysis. The overall MSA (Measure of Sampling Adequacy) value is 0.89, which is considered meritorious (close to the ideal value of 1). This indicates that the dataset is highly suitable for factor analysis.
+
+MSA Interpretation for Individual Variables:
+
+Most variables have MSA values above 0.80, indicating good to excellent adequacy.
+The variable tech_resistance has an MSA value of 0.66, which is considered mediocre. Although acceptable, it may warrant closer inspection during the factor analysis process.
+
+
+```{r}
+# Run Factor Analysis with suggested number of factors (2)
+fa_result <- fa(fa_data, nfactors = 2, rotate = "varimax", fm = "pa", scores = "regression")
+
+# Print factor loadings
+print(fa_result$loadings, cutoff = 0.3)
+
+# Check communalities (should be <1 and reasonable)
+print(fa_result$communalities)
+```
+###conclusion
+Factor analysis was conducted using the Principal Axis (PA) method with Varimax rotation, identifying two key factors that explain the underlying structure of the dataset. The first factor (PA1) had strong loadings on variables such as climate_change, high_production_cost, inflation_stress, and pest_disease, suggesting that this factor represents Production and Environmental Stress. The second factor (PA2) had strong loadings on variables like lack_of_processing_units, no_farm_loan, lack_of_govt_support, and electricity_issue, indicating that this factor may represent Infrastructure and Financial Support.
+
+Together, these two factors accounted for 32.8% of the total variance in the dataset, with PA1 contributing 21.8% and PA2 contributing 11.0%. While this cumulative variance is moderate, it provides meaningful insights into the primary influences within the data. 
+
+# Visualize Factor Loadings
+```{r}
+
+fa.diagram(fa_result)
+```
+
+# Compute Factor Scores
+```{r}
+
+factor_scores <- fa_result$scores
+head(factor_scores)
+
+```
+##conclusion
+The computed factor scores reveal how observations align with the identified factors. Higher PA1 scores indicate stronger associations with Production and Environmental Stress, while higher PA2 scores reflect greater exposure to Infrastructure and Financial Support challenges. For instance, the first observation shows notable stress in both dimensions, whereas the second observation has fewer infrastructure-related issues, as indicated by its negative PA2 score. 
+
