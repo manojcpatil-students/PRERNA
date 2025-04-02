@@ -20,7 +20,7 @@ library(psych)
 # Load the dataset
 ```{r}
 file_path <- "SurveyData.xlsx"
-df <- read_excel("D:/Stat syllabus/PRERNA/SurveyData.xlsx", sheet = 1)
+df <- read_excel("SurveyData.xlsx", sheet = 1)
 ```
 
 # View first few rows

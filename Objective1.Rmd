@@ -19,7 +19,7 @@ library(dplyr)
 
 ## Load Data
 ```{r}
-file_path <- "SurveyData.xlsx"
+file_path <- "SurveyData_labels.xlsx"
 survey_main <- read_excel(file_path, sheet = 1)
 family_members <- read_excel(file_path, sheet = "family_members")
 earning_members <- read_excel(file_path, sheet = "earning_members")
@@ -91,21 +91,21 @@ earning_members %>%
 
 ### Family Size Distribution
 ```{r}
-family_members %>%
-  #count(farmer_id) %>%
-  ggplot(aes(x = n)) +
-  geom_histogram(bins = 10, fill = "purple", alpha = 0.7) +
-  labs(title = "Family Size Distribution", x = "Number of Family Members", y = "Count")
+#family_members %>%
+#  count(farmer_id) %>%
+#  ggplot(aes(x = n)) +
+#  geom_histogram(bins = 10, fill = "purple", alpha = 0.7) +
+#  labs(title = "Family Size Distribution", x = "Number of Family Members", y = "Count")
 ```
 
 ### Health Issues Analysis
 ```{r}
-health_details %>%
-  count(health_issue) %>%
-  ggplot(aes(x = reorder(health_issue, -n), y = n, fill = health_issue)) +
-  geom_bar(stat = "identity", alpha = 0.7) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(title = "Health Issues Reported", x = "Health Issue", y = "Count")
+#health_details %>%
+#  count(health_issue) %>%
+#  ggplot(aes(x = reorder(health_issue, -n), y = n, fill = health_issue)) +
+#  geom_bar(stat = "identity", alpha = 0.7) +
+#  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+#  labs(title = "Health Issues Reported", x = "Health Issue", y = "Count")
 ```
 
 ## Conclusion

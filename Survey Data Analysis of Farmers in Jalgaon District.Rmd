@@ -1,0 +1,308 @@
+---
+title: "Survey Data Analysis of Farmers in Jalgaon District"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## 1. Load Required Libraries
+```{r}
+library(tidyverse)    # Data manipulation and visualization
+library(readxl)       # Read Excel files
+library(DT)           # Interactive tables
+library(dplyr)        # Data manipulation
+library(ggplot2)      # Visualization
+library(janitor)      # Clean column names
+library(skimr)        # Summary statistics
+library(knitr)        # To create formatted tables
+```
+
+## 2. Load Data
+Set the file path and load all sheets from the Excel file.
+```{r}
+file_path <- "SurveyData.xlsx"  # Update with full path if needed
+survey_main <- read_excel(file_path, sheet = 1) %>% clean_names()
+family_members <- read_excel(file_path, sheet = "family_members") %>% clean_names()
+earning_members <- read_excel(file_path, sheet = "earning_members") %>% clean_names()
+family_responsibilities <- read_excel(file_path, sheet = "family_responsibilities") %>% clean_names()
+health_details <- read_excel(file_path, sheet = "health_details") %>% clean_names()
+```
+
+## 3. Data Overview
+### 3.1 Main Survey Data
+```{r}
+dim(survey_main)
+skim(survey_main)  # Detailed summary
+kable(head(survey_main, 10), caption = "First 10 Rows of Main Survey Data")
+```
+
+### 3.2 Family Members
+```{r}
+dim(family_members)
+skim(family_members)
+kable(head(family_members, 10), caption = "First 10 Rows of Family Members")
+```
+
+### 3.3 Earning Members
+```{r}
+dim(earning_members)
+skim(earning_members)
+kable(head(earning_members, 10), caption = "First 10 Rows of Earning Members")
+```
+
+### 3.4 Family Responsibilities
+```{r}
+dim(family_responsibilities)
+skim(family_responsibilities)
+kable(head(family_responsibilities, 10), caption = "First 10 Rows of Family Responsibilities")
+```
+
+### 3.5 Health Details
+```{r}
+dim(health_details)
+skim(health_details)
+kable(head(health_details, 10), caption = "First 10 Rows of Health Details")
+```
+
+## 4. Data Cleaning
+### Handle Missing Values and Standardize Data
+```{r}
+# Replace NA with appropriate values or remove if necessary
+survey_main <- survey_main %>% 
+  mutate(age = as.numeric(age),
+         annual_income = factor(annual_income, levels = c("below_50k", "50k_75k", "75k_1lakh", "1lakh_2lakh", "2lakh_5lakh", "above_5lakh")),
+         gender = factor(gender, levels = c("male", "female", "other")))
+
+# Check for missing values
+kable(colSums(is.na(survey_main)), col.names = c("Missing Values"), caption = "Missing Values in Main Survey Data")
+```
+
+## 5. Descriptive Statistics
+### 5.1 Age Distribution
+```{r}
+summary(survey_main$age)
+survey_main %>%
+  ggplot(aes(x = age)) + 
+  geom_histogram(bins = 20, fill = "blue", alpha = 0.7) +
+  labs(title = "Age Distribution of Farmers", x = "Age", y = "Count") +
+  theme_minimal()
+```
+
+### 5.2 Gender Distribution
+```{r}
+survey_main %>%
+  count(gender) %>%
+  ggplot(aes(x = gender, y = n, fill = gender)) + 
+  geom_bar(stat = "identity", alpha = 0.7) +
+  labs(title = "Gender Distribution", x = "Gender", y = "Count") +
+  theme_minimal()
+```
+
+### 5.3 Education Levels
+```{r}
+survey_main %>%
+  count(education) %>%
+  ggplot(aes(x = reorder(education, n), y = n, fill = education)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Education Levels of Farmers", x = "Education", y = "Count") +
+  theme_minimal()
+```
+
+### 5.4 Income Analysis
+```{r}
+survey_main %>%
+  ggplot(aes(x = annual_income)) + 
+  geom_bar(fill = "red", alpha = 0.7) +
+  labs(title = "Annual Income Distribution", x = "Income Bracket", y = "Count") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## 6. Land Ownership and Agriculture
+### 6.1 Total Land Distribution
+
+```{r}
+unique(survey_main$total_land)
+```
+
+# Variable 'total_land' should be numeric. Only then run following code
+
+```{r}
+#survey_main %>%
+#  ggplot(aes(x = total_land)) + 
+#  geom_histogram(bins = 15, fill = "green", alpha = 0.7) +
+#  labs(title = "Distribution of Total Land Owned", x = "Total Land (bigha/acre)", y = "Count") +
+#  theme_minimal()
+```
+
+### 6.2 Crops Grown
+```{r}
+survey_main %>%
+  select(cotton, maize, jowar, bajra, pulses, soybean, wheat, gram) %>%
+  summarise_all(mean, na.rm = TRUE) %>%
+  pivot_longer(everything(), names_to = "Crop", values_to = "Proportion") %>%
+  ggplot(aes(x = Crop, y = Proportion, fill = Crop)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Proportion of Farmers Growing Each Crop", y = "Proportion") +
+  theme_minimal()
+```
+
+## 7. Loan and Financial Stress
+### 7.1 Loan Status
+```{r}
+survey_main %>%
+  count(loan_status) %>%
+  ggplot(aes(x = loan_status, y = n, fill = loan_status)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Loan Status Distribution", x = "Loan Status", y = "Count") +
+  theme_minimal()
+```
+
+### 7.2 Loan Amount vs. Income
+```{r}
+survey_main %>%
+  ggplot(aes(x = annual_income, y = loan_amount, fill = annual_income)) +
+  geom_boxplot() +
+  labs(title = "Loan Amount by Annual Income", x = "Income", y = "Loan Amount (INR)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## 8. Mental Health Analysis
+### 8.1 Depression Scores
+```{r}
+survey_main$depression_1
+```
+
+
+```{r}
+survey_main %>%
+  select(starts_with("depression_")) %>%
+  pivot_longer(everything(), names_to = "Question", values_to = "Response") %>%
+  count(Question, Response) %>%
+  ggplot(aes(x = Question, y = n, fill = Response)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Frequency of Depression Responses", y = "Count", fill = "Response Category") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## 9. Government Scheme Awareness
+```{r}
+survey_main %>%
+  select(pm_kisan, pmfby, kisan_credit) %>%
+  summarise_all(~sum(. == "received_benefit", na.rm = TRUE)) %>%
+  pivot_longer(everything(), names_to = "Scheme", values_to = "Beneficiaries") %>%
+  ggplot(aes(x = Scheme, y = Beneficiaries, fill = Scheme)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Number of Beneficiaries by Scheme", y = "Count") +
+  theme_minimal()
+```
+
+
+```{r}
+generate_freq_tables <- function(df, sheet_name) {
+  cat("## Frequency Distributions for", sheet_name, "\n\n")
+  for (var in names(df)) {
+    cat("###", var, "\n")
+    
+    # Skip if variable is entirely NA
+    if (all(is.na(df[[var]]))) {
+      cat("Variable", var, "contains only NA values and is skipped.\n")
+      next
+    }
+    
+    # Number of unique non-NA values
+    unique_vals <- length(unique(na.omit(df[[var]])))
+    
+    if (is.factor(df[[var]]) || is.character(df[[var]]) || unique_vals < 10) {
+      # Treat as categorical
+      freq_table <- table(df[[var]], useNA = "ifany")
+      prop_table <- prop.table(freq_table) * 100
+      combined_table <- cbind(Count = freq_table, Percentage = round(prop_table, 2))
+      print(kable(combined_table, caption = paste("Frequency table for", var)))
+    } else if (is.numeric(df[[var]]) && unique_vals >= 10) {
+      # Treat as continuous and attempt binning
+      breaks <- quantile(df[[var]], probs = seq(0, 1, by = 0.2), na.rm = TRUE)
+      if (length(unique(breaks)) < length(breaks)) {
+        cat("Note: Variable", var, "has duplicate breaks and will be treated as categorical.\n")
+        freq_table <- table(df[[var]], useNA = "ifany")
+        prop_table <- prop.table(freq_table) * 100
+        combined_table <- cbind(Count = freq_table, Percentage = round(prop_table, 2))
+        print(kable(combined_table, caption = paste("Frequency table for", var, "(categorical due to duplicate breaks)")))
+      } else {
+        # Proceed with binning
+        binned <- cut(df[[var]], breaks = breaks, include.lowest = TRUE, dig.lab = 5)
+        freq_table <- table(binned, useNA = "ifany")
+        prop_table <- prop.table(freq_table) * 100
+        combined_table <- cbind(Count = freq_table, Percentage = round(prop_table, 2))
+        print(kable(combined_table, caption = paste("Frequency table for", var, "(binned)")))
+      }
+    } else {
+      cat("Variable", var, "is of type", class(df[[var]]), "and will be skipped.\n")
+    }
+    cat("\n\n")
+  }
+}
+```
+```{r}
+generate_freq_tables(survey_main, "Main Survey Data")
+```
+
+```{r}
+generate_freq_tables(family_members, "Family Members")
+```
+
+
+```{r}
+generate_freq_tables(earning_members, "Earning Members")
+
+```
+
+```{r}
+generate_freq_tables(family_responsibilities, "Family Responsibilities")
+
+```
+
+```{r}
+#generate_freq_tables(health_details, "Health Details")
+```
+
+
+
+
+
+## 10. Conclusion
+This EDA provides insights into the demographics, economic conditions, agricultural practices, financial burdens, and mental health of farmers in Jalgaon district. Further analysis could explore correlations between mental health and financial stress or the impact of government schemes on income stability.
+```
+
+---
+
+## Instructions to Run the Analysis
+
+1. **Install R and RStudio**:
+   - Download and install R from [CRAN](https://cran.r-project.org/).
+   - Install RStudio from [RStudio](https://rstudio.com/).
+
+2. **Install Required Packages**:
+   ```R
+   # install.packages(c("tidyverse", "readxl", "DT", "dplyr", "ggplot2", "janitor", "skimr", "knitr"))
+   ```
+
+3. **Set Working Directory**:
+   - Place `SurveyData_labels.xlsx` in your working directory or update the `file_path` in the code.
+   - Check your working directory with `getwd()` and set it with `setwd("path/to/directory")`.
+
+4. **Run the R Markdown File**:
+   - Save the code as `survey_analysis.Rmd`.
+   - Open in RStudio, click "Knit" > "Knit to Word" to generate the report.
+
+5. **Adjustments**:
+   - If column names in your data differ (e.g., due to Marathi labels or Excel export), use `colnames(survey_main)` to verify and update the code accordingly.
+   - Handle encoding for Marathi text if needed using `iconv()` or `stringi` package.
+
