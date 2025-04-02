@@ -66,7 +66,7 @@ for (var in categorical_vars) {
   colnames(df) <- c(var, "Count")
   
   # Print table in LaTeX format
-  print(kable(df, format= 'latex',booktabs = TRUE, caption = paste("Frequency Table for", var)))
+  print(kable(df, booktabs = TRUE, caption = paste("Frequency Table for", var)))
 }
 
 # Generate all possible pivot tables (cross-tabulations)
@@ -81,7 +81,7 @@ for (combo in combinations) {
   colnames(df_pivot) <- c(combo[1], combo[2], "Count")
   
   # Print pivot table in LaTeX format
-  print(kable(df_pivot,format= 'latex', booktabs = TRUE, caption = paste("Pivot Table for", combo[1], "vs", combo[2])))
+  print(kable(df_pivot, booktabs = TRUE, caption = paste("Pivot Table for", combo[1], "vs", combo[2])))
 }
 
 ```

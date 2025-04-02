@@ -1,0 +1,1331 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\begin{document}
+\title{Survey Data Analysis}
+\author{Automated Report}
+\date{\today}
+\maketitle
+
+\section{Summary Statistics}
+\begin{table}
+\caption{Summary Statistics for Numerical Variables}
+\label{tab:summary_statistics}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrlrrrr}
+\toprule
+ & age & total\_family\_members & income\_sources/agriculture & income\_sources/labour & income\_sources/job & income\_sources/business & income\_sources/privatejob & income\_sources/governmentjob & income\_sources/pension & income\_sources/other & soiltestedyear & water\_sources/none & water\_sources/river & water\_sources/well & water\_sources/canal & water\_sources/borewell & water\_sources/farm\_pond & water\_sources/reservoir & water\_sources/dam & water\_sources/neighbor\_water & cotton & maize & jowar & bajra & pulses & soybean & wheat & gram & sorghum & maize2 & groundnut & melon & sesame & banana & pomegranate & citrus & vegetables & bullocks & cow & poultry & sprayer & motor & thresher & tractor & business\_type/labor & business\_type/dairy & business\_type/poultry & business\_type/job & business\_type/cottage & business\_type/goat\_farming & business\_type/other & loan\_purpose/agriculture\_inputs & loan\_purpose/agriculture\_machinery & loan\_purpose/crop\_loss & loan\_purpose/debt\_repayment & loan\_purpose/household\_needs & loan\_purpose/supplementary\_business & loan\_purpose/other & loan\_source/bank & loan\_source/private\_lender & loan\_source/cooperative & loan\_source/relatives\_friends & loan\_source/self\_help\_group & loan\_source/microfinance & loan\_source/other & loan\_duration & overdue\_duration & difficulties/1 & difficulties/2 & difficulties/3 & difficulties/4 & difficulties/5 & scheme\_info\_sources/local\_agriculture\_office & scheme\_info\_sources/cooperative & scheme\_info\_sources/tv\_radio & scheme\_info\_sources/internet\_apps & scheme\_info\_sources/ngo & scheme\_info\_sources/\_ & scheme\_improvements/more\_info\_training & scheme\_improvements/simplified\_process & scheme\_improvements/local\_help\_centers & scheme\_improvements/other & other\_improvements & text\_ye0iz81 & \_\_005 & life\_insurance & agri\_insurance & cropping\_pattern & crops\_kharif & crops\_kharif/jowar & crops\_kharif/bajra & crops\_kharif/maize & crops\_kharif/urad\_moong & crops\_kharif/soybean & crops\_kharif/\_\_\_\_ & \_\_008 & crops\_rabi & crops\_rabi/wheat & crops\_rabi/gram & crops\_rabi/jowar\_late & crops\_rabi/\_\_\_\_ & crops\_summer & crops\_summer/maize & crops\_summer/sugarcane & crops\_summer/groundnut & crops\_summer/cucumber\_melon & crops\_summer/\_\_\_\_ & crops\_horticulture & crops\_horticulture/banana & crops\_horticulture/pomegranate & crops\_horticulture/citrus & crops\_horticulture/\_\_\_\_ & other & text\_lo1xd85 & health\_conditions & health\_conditions/heart\_disease & health\_conditions/diabetes & health\_conditions/respiratory\_disease & health\_conditions/mental\_stress & health\_conditions/other & \_\_015 & other\_farming\_issues & job\_card & balasaheb\_project & ahilyadevi\_nursery & other\_schemes & \_\_002/1 & \_\_002/2 & \_\_002/3 & \_\_002/4 & \_\_002/5 & \_id & \_submission\_time & \_notes & \_submitted\_by & \_tags & \_index \\
+\midrule
+count & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 157.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 8.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 254.000000 & 114.000000 & 66.000000 & 57.000000 & 57.000000 & 53.000000 & 77.000000 & 81.000000 & 53.000000 & 82.000000 & 44.000000 & 45.000000 & 43.000000 & 48.000000 & 42.000000 & 43.000000 & 43.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 267.000000 & 246.000000 & 246.000000 & 246.000000 & 246.000000 & 246.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 303.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 54.000000 & 54.000000 & 54.000000 & 54.000000 & 54.000000 & 303.000000 & 303 & 0.000000 & 0.000000 & 0.000000 & 303.000000 \\
+mean & 44.557756 & 4.726073 & 0.927393 & 0.749175 & 0.000000 & 0.013201 & 0.056106 & 0.013201 & 0.006601 & 0.026403 & 6.000000 & 0.511551 & 0.016502 & 0.363036 & 0.016502 & 0.082508 & 0.000000 & 0.003300 & 0.000000 & 0.046205 & 3.748031 & 1.929825 & 0.484848 & 0.192982 & 0.333333 & 0.132075 & 1.740260 & 1.543210 & 0.415094 & 2.158537 & 0.136364 & 0.222222 & 0.000000 & 0.375000 & 0.000000 & 0.069767 & 0.000000 & 0.188119 & 0.198020 & 0.019802 & 0.161716 & 0.214521 & 0.026403 & 0.072607 & 0.894389 & 0.042904 & 0.003300 & 0.016502 & 0.000000 & 0.009901 & 0.056106 & 0.883895 & 0.138577 & 0.471910 & 0.505618 & 0.617978 & 0.022472 & 0.022472 & 0.539326 & 0.258427 & 0.262172 & 0.333333 & 0.183521 & 0.067416 & 0.014981 & 463.063670 & 249.516854 & 0.573171 & 0.776423 & 0.552846 & 0.077236 & 0.097561 & 0.277228 & 0.112211 & 0.442244 & 0.726073 & 0.584158 & 0.042904 & 0.759076 & 0.851485 & 0.712871 & 0.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 2.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 0.555556 & 0.740741 & 0.629630 & 0.111111 & 0.074074 & 449930925.343234 & 2025-03-09 12:40:22.412541184 & NaN & NaN & NaN & 152.000000 \\
+min & 5.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 2.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & -1.000000 & -1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 2.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 446352748.000000 & 2025-02-27 16:29:31 & NaN & NaN & NaN & 1.000000 \\
+25\% & 35.000000 & 3.000000 & 1.000000 & 0.500000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 2.750000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 2.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 2.500000 & 1.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 2.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 0.000000 & 0.250000 & 0.000000 & 0.000000 & 0.000000 & 447783328.500000 & 2025-03-04 03:09:08 & NaN & NaN & NaN & 76.500000 \\
+50\% & 44.000000 & 4.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 4.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 3.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 4.000000 & 3.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 1.000000 & 0.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 2.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 449247157.000000 & 2025-03-07 14:26:48 & NaN & NaN & NaN & 152.000000 \\
+75\% & 53.000000 & 5.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 8.000000 & 1.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 4.000000 & 3.000000 & 0.750000 & 0.000000 & 0.000000 & 0.000000 & 2.000000 & 2.000000 & 0.000000 & 4.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 0.000000 & 8.000000 & 5.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 1.000000 & 0.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 2.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 0.000000 & 451359195.500000 & 2025-03-13 05:46:08.500000 & NaN & NaN & NaN & 227.500000 \\
+max & 76.000000 & 50.000000 & 1.000000 & 1.000000 & 0.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 15.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 1.000000 & 0.000000 & 1.000000 & 133.000000 & 17.000000 & 5.000000 & 3.000000 & 3.000000 & 3.000000 & 20.000000 & 17.000000 & 4.000000 & 15.000000 & 5.000000 & 6.000000 & 0.000000 & 6.000000 & 0.000000 & 3.000000 & 0.000000 & 2.000000 & 5.000000 & 5.000000 & 1.000000 & 4.000000 & 5.000000 & 5.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 45000.000000 & 5000.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 0.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 2.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 1.000000 & 457639385.000000 & 2025-03-29 08:05:07 & NaN & NaN & NaN & 303.000000 \\
+std & 12.593852 & 3.682006 & 0.259920 & 0.434205 & 0.000000 & 0.114325 & 0.230506 & 0.114325 & 0.081110 & 0.160595 & 4.750940 & 0.500693 & 0.127605 & 0.481671 & 0.127605 & 0.275593 & 0.000000 & 0.057448 & 0.000000 & 0.210275 & 8.585279 & 2.512691 & 1.041337 & 0.580597 & 0.852168 & 0.520271 & 3.180544 & 2.387726 & 0.928894 & 2.764276 & 0.765261 & 1.063632 & 0.000000 & 1.231242 & 0.000000 & 0.457496 & 0.000000 & 0.416057 & 0.581500 & 0.292744 & 0.368799 & 0.456941 & 0.303341 & 0.424430 & 0.307847 & 0.202977 & 0.057448 & 0.127605 & 0.000000 & 0.099174 & 0.230506 & 0.320952 & 0.346153 & 0.500148 & 0.500907 & 0.486794 & 0.148491 & 0.148491 & 0.499387 & 0.438592 & 0.440642 & 0.472290 & 0.387820 & 0.251211 & 0.121706 & 2835.989810 & 701.654036 & 0.495625 & 0.417491 & 0.498213 & 0.267509 & 0.297325 & 0.448370 & 0.316148 & 0.497475 & 0.446710 & 0.493682 & 0.202977 & 0.428352 & 0.356198 & 0.453171 & 0.000000 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 0.501570 & 0.442343 & 0.487438 & 0.317221 & 0.264351 & 2662372.417270 & NaN & NaN & NaN & NaN & 87.612784 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for gender}
+\begin{table}
+\caption{Frequency Table for gender}
+\label{tab:gender_freq}
+\begin{tabular}{lr}
+\toprule
+gender & Count \\
+\midrule
+male & 298 \\
+female & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for marital_status}
+\begin{table}
+\caption{Frequency Table for marital_status}
+\label{tab:marital_status_freq}
+\begin{tabular}{lr}
+\toprule
+marital\_status & Count \\
+\midrule
+married & 261 \\
+unmarried & 34 \\
+\_ & 5 \\
+divorced & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for education}
+\begin{table}
+\caption{Frequency Table for education}
+\label{tab:education_freq}
+\begin{tabular}{lr}
+\toprule
+education & Count \\
+\midrule
+primary & 98 \\
+secondary & 96 \\
+higher\_secondary & 48 \\
+illiterate & 44 \\
+graduate & 17 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for religion}
+\begin{table}
+\caption{Frequency Table for religion}
+\label{tab:religion_freq}
+\begin{tabular}{lr}
+\toprule
+religion & Count \\
+\midrule
+हिंदू & 266 \\
+हिंदु & 24 \\
+बौद्ध & 4 \\
+हिन्दु & 1 \\
+हिंदुं & 1 \\
+Hindu & 1 \\
+हिंदी & 1 \\
+हिदू & 1 \\
+हिंदू , कुणबी & 1 \\
+मुस्लिम & 1 \\
+हिंदू कुणबी & 1 \\
+हिंदू गोर & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for caste}
+\begin{table}
+\caption{Frequency Table for caste}
+\label{tab:caste_freq}
+\begin{tabular}{lr}
+\toprule
+caste & Count \\
+\midrule
+कुणबी & 41 \\
+कुणबी पाटील & 30 \\
+मराठा & 29 \\
+कोळी & 17 \\
+OBC & 17 \\
+धनगर & 12 \\
+राजपूत & 10 \\
+पाटील & 7 \\
+मराठा पाटील & 6 \\
+बंजारा & 6 \\
+कुणबी मराठा & 5 \\
+गोर बंजारा & 5 \\
+फुलमाळी & 5 \\
+महार & 4 \\
+तेली & 3 \\
+हटकर & 3 \\
+माळी & 3 \\
+फुल माळी & 3 \\
+ओबीसी & 3 \\
+हटकर धनगर & 3 \\
+वंजारी & 2 \\
+मराठे & 2 \\
+गुजर & 2 \\
+बारी & 2 \\
+बौद्ध & 2 \\
+लेवा पाटील & 2 \\
+कुंबि मराठा & 2 \\
+हिंदू कोळी & 2 \\
+हिंदू मराठा & 2 \\
+हिंदू कुणबी & 2 \\
+टोकरे कोळी & 2 \\
+सूर्यवंशी गुजर & 2 \\
+कुंभी पाटील & 2 \\
+गुर्जर & 2 \\
+बेलदार & 2 \\
+हिंदू-मराठा & 1 \\
+हिंदू-माळी & 1 \\
+चांभार & 1 \\
+VJ & 1 \\
+माली & 1 \\
+कुनबी & 1 \\
+कुंभार & 1 \\
+बंजरा & 1 \\
+टोकरी कोळी & 1 \\
+पठान & 1 \\
+न्हवी & 1 \\
+महाजन & 1 \\
+गवळी & 1 \\
+भटके जोशी & 1 \\
+न्हावी & 1 \\
+कुंबि पाटील & 1 \\
+SBC & 1 \\
+हरीजन & 1 \\
+हटकर पाटील & 1 \\
+भिल & 1 \\
+NaN & 1 \\
+कुंभी & 1 \\
+ST & 1 \\
+Open & 1 \\
+कुम्बी & 1 \\
+भिल्ल & 1 \\
+हिंदू-कुणबी & 1 \\
+राजपूत पाटील & 1 \\
+गोर्गांजरा & 1 \\
+तेली - & 1 \\
+बारोड & 1 \\
+दोढे गुजर & 1 \\
+OBC हिंदू कुंभी & 1 \\
+चौधरी & 1 \\
+कुंभी मराठा & 1 \\
+परदेशी & 1 \\
+कुमावत & 1 \\
+दोडे गुजर & 1 \\
+शिंपी & 1 \\
+हिंदू लेवा पाटील & 1 \\
+लेवा पाटीलदार & 1 \\
+धनगर NTC & 1 \\
+रेवा गुज्जर & 1 \\
+धनगर (पाटील) & 1 \\
+गोरबंजारा & 1 \\
+लेवापाटीदार & 1 \\
+काचमाळी & 1 \\
+महार (सोनवणे ) & 1 \\
+सुतार & 1 \\
+मातंग & 1 \\
+गोर  बंजारा & 1 \\
+आठकर पाटील & 1 \\
+देवरे (पाटील) & 1 \\
+मराठा(कुणबी) & 1 \\
+लेवापाटिल & 1 \\
+काच माळी & 1 \\
+परदेशी (भानटा ) & 1 \\
+खाटीक & 1 \\
+तिरड कुणबी & 1 \\
+जीरी माळी & 1 \\
+रंगारी & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for income_sources}
+\begin{table}
+\caption{Frequency Table for income_sources}
+\label{tab:income_sources_freq}
+\begin{tabular}{lr}
+\toprule
+income\_sources & Count \\
+\midrule
+agriculture labour & 195 \\
+agriculture & 60 \\
+labour & 18 \\
+agriculture Privatejob & 8 \\
+agriculture labour Privatejob & 5 \\
+agriculture labour Other & 2 \\
+agriculture Other & 2 \\
+labour Other & 2 \\
+agriculture labour GovernmentJob & 1 \\
+agriculture labour Pension & 1 \\
+agriculture labour Privatejob GovernmentJob & 1 \\
+agriculture Privatejob GovernmentJob & 1 \\
+agriculture business Pension & 1 \\
+Other & 1 \\
+Privatejob & 1 \\
+agriculture labour business & 1 \\
+agriculture business GovernmentJob & 1 \\
+agriculture business & 1 \\
+agriculture labour Privatejob Other & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for bpl_status}
+\begin{table}
+\caption{Frequency Table for bpl_status}
+\label{tab:bpl_status_freq}
+\begin{tabular}{lr}
+\toprule
+bpl\_status & Count \\
+\midrule
+yes & 167 \\
+no & 136 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for ration_card}
+\begin{table}
+\caption{Frequency Table for ration_card}
+\label{tab:ration_card_freq}
+\begin{tabular}{lr}
+\toprule
+ration\_card & Count \\
+\midrule
+orange & 155 \\
+yellow & 137 \\
+white & 6 \\
+none & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Frequency Table for loan_status}
+\begin{table}
+\caption{Frequency Table for loan_status}
+\label{tab:loan_status_freq}
+\begin{tabular}{lr}
+\toprule
+loan\_status & Count \\
+\midrule
+yes & 267 \\
+no & 36 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs marital_status}
+\begin{table}
+\caption{Pivot Table for gender vs marital_status}
+\label{tab:gender_marital_status}
+\begin{tabular}{lrrrr}
+\toprule
+marital_status & \_ & divorced & married & unmarried \\
+gender &  &  &  &  \\
+\midrule
+female & 1 & 0 & 4 & 0 \\
+male & 4 & 3 & 257 & 34 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs education}
+\begin{table}
+\caption{Pivot Table for gender vs education}
+\label{tab:gender_education}
+\begin{tabular}{lrrrrr}
+\toprule
+education & graduate & higher\_secondary & illiterate & primary & secondary \\
+gender &  &  &  &  &  \\
+\midrule
+female & 0 & 0 & 0 & 3 & 2 \\
+male & 17 & 48 & 44 & 95 & 94 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs religion}
+\begin{table}
+\caption{Pivot Table for gender vs religion}
+\label{tab:gender_religion}
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+religion & Hindu & बौद्ध & मुस्लिम & हिंदी & हिंदु & हिंदुं & हिंदू & हिंदू , कुणबी & हिंदू कुणबी & हिंदू गोर & हिदू & हिन्दु \\
+gender &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+female & 0 & 0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 & 0 & 0 & 0 \\
+male & 1 & 4 & 1 & 1 & 24 & 1 & 261 & 1 & 1 & 1 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs caste}
+\begin{table}
+\caption{Pivot Table for gender vs caste}
+\label{tab:gender_caste}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+\toprule
+caste & OBC & OBC हिंदू कुंभी & Open & SBC & ST & VJ & आठकर पाटील & ओबीसी & काच माळी & काचमाळी & कुंबि पाटील & कुंबि मराठा & कुंभार & कुंभी & कुंभी पाटील & कुंभी मराठा & कुणबी & कुणबी पाटील & कुणबी मराठा & कुनबी & कुमावत & कुम्बी & कोळी & खाटीक & गवळी & गुजर & गुर्जर & गोर  बंजारा & गोर बंजारा & गोरबंजारा & गोर्गांजरा & चांभार & चौधरी & जीरी माळी & टोकरी कोळी & टोकरे कोळी & तिरड कुणबी & तेली & तेली - & देवरे (पाटील) & दोडे गुजर & दोढे गुजर & धनगर & धनगर (पाटील) & धनगर NTC & न्हवी & न्हावी & पठान & परदेशी & परदेशी (भानटा ) & पाटील & फुल माळी & फुलमाळी & बंजरा & बंजारा & बारी & बारोड & बेलदार & बौद्ध & भटके जोशी & भिल & भिल्ल & मराठा & मराठा पाटील & मराठा(कुणबी) & मराठे & महाजन & महार & महार (सोनवणे ) & मातंग & माली & माळी & रंगारी & राजपूत & राजपूत पाटील & रेवा गुज्जर & लेवा पाटील & लेवा पाटीलदार & लेवापाटिल & लेवापाटीदार & वंजारी & शिंपी & सुतार & सूर्यवंशी गुजर & हटकर & हटकर धनगर & हटकर पाटील & हरीजन & हिंदू कुणबी & हिंदू कोळी & हिंदू मराठा & हिंदू लेवा पाटील & हिंदू-कुणबी & हिंदू-मराठा & हिंदू-माळी \\
+gender &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+female & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+male & 16 & 1 & 1 & 1 & 1 & 1 & 1 & 3 & 1 & 1 & 1 & 2 & 1 & 1 & 2 & 1 & 41 & 29 & 5 & 0 & 1 & 1 & 17 & 1 & 1 & 2 & 2 & 1 & 5 & 1 & 1 & 1 & 1 & 1 & 1 & 2 & 1 & 3 & 1 & 1 & 1 & 1 & 12 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 7 & 3 & 5 & 1 & 6 & 2 & 1 & 2 & 2 & 1 & 1 & 1 & 29 & 6 & 1 & 2 & 1 & 4 & 1 & 1 & 1 & 3 & 1 & 10 & 1 & 1 & 2 & 1 & 1 & 1 & 2 & 1 & 1 & 2 & 3 & 3 & 1 & 1 & 2 & 1 & 2 & 1 & 1 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs income_sources}
+\begin{table}
+\caption{Pivot Table for gender vs income_sources}
+\label{tab:gender_income_sources}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrr}
+\toprule
+income_sources & Other & Privatejob & agriculture & agriculture Other & agriculture Privatejob & agriculture Privatejob GovernmentJob & agriculture business & agriculture business GovernmentJob & agriculture business Pension & agriculture labour & agriculture labour GovernmentJob & agriculture labour Other & agriculture labour Pension & agriculture labour Privatejob & agriculture labour Privatejob GovernmentJob & agriculture labour Privatejob Other & agriculture labour business & labour & labour Other \\
+gender &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+female & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+male & 1 & 1 & 59 & 2 & 7 & 1 & 1 & 1 & 1 & 192 & 1 & 2 & 1 & 5 & 1 & 1 & 1 & 18 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs bpl_status}
+\begin{table}
+\caption{Pivot Table for gender vs bpl_status}
+\label{tab:gender_bpl_status}
+\begin{tabular}{lrr}
+\toprule
+bpl_status & no & yes \\
+gender &  &  \\
+\midrule
+female & 3 & 2 \\
+male & 133 & 165 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs ration_card}
+\begin{table}
+\caption{Pivot Table for gender vs ration_card}
+\label{tab:gender_ration_card}
+\begin{tabular}{lrrrr}
+\toprule
+ration_card & none & orange & white & yellow \\
+gender &  &  &  &  \\
+\midrule
+female & 0 & 4 & 0 & 1 \\
+male & 5 & 151 & 6 & 136 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for gender vs loan_status}
+\begin{table}
+\caption{Pivot Table for gender vs loan_status}
+\label{tab:gender_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+gender &  &  \\
+\midrule
+female & 0 & 5 \\
+male & 36 & 262 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for marital_status vs education}
+\begin{table}
+\caption{Pivot Table for marital_status vs education}
+\label{tab:marital_status_education}
+\begin{tabular}{lrrrrr}
+\toprule
+education & graduate & higher\_secondary & illiterate & primary & secondary \\
+marital_status &  &  &  &  &  \\
+\midrule
+\_ & 0 & 1 & 0 & 3 & 1 \\
+divorced & 0 & 1 & 0 & 1 & 1 \\
+married & 11 & 36 & 43 & 87 & 84 \\
+unmarried & 6 & 10 & 1 & 7 & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for marital_status vs religion}
+\begin{table}
+\caption{Pivot Table for marital_status vs religion}
+\label{tab:marital_status_religion}
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+religion & Hindu & बौद्ध & मुस्लिम & हिंदी & हिंदु & हिंदुं & हिंदू & हिंदू , कुणबी & हिंदू कुणबी & हिंदू गोर & हिदू & हिन्दु \\
+marital_status &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+\_ & 0 & 0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 & 0 & 0 & 0 \\
+divorced & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 \\
+married & 1 & 4 & 0 & 1 & 20 & 1 & 230 & 1 & 1 & 1 & 1 & 0 \\
+unmarried & 0 & 0 & 1 & 0 & 4 & 0 & 28 & 0 & 0 & 0 & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for marital_status vs caste}
+\begin{table}
+\caption{Pivot Table for marital_status vs caste}
+\label{tab:marital_status_caste}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+\toprule
+caste & OBC & OBC हिंदू कुंभी & Open & SBC & ST & VJ & आठकर पाटील & ओबीसी & काच माळी & काचमाळी & कुंबि पाटील & कुंबि मराठा & कुंभार & कुंभी & कुंभी पाटील & कुंभी मराठा & कुणबी & कुणबी पाटील & कुणबी मराठा & कुनबी & कुमावत & कुम्बी & कोळी & खाटीक & गवळी & गुजर & गुर्जर & गोर  बंजारा & गोर बंजारा & गोरबंजारा & गोर्गांजरा & चांभार & चौधरी & जीरी माळी & टोकरी कोळी & टोकरे कोळी & तिरड कुणबी & तेली & तेली - & देवरे (पाटील) & दोडे गुजर & दोढे गुजर & धनगर & धनगर (पाटील) & धनगर NTC & न्हवी & न्हावी & पठान & परदेशी & परदेशी (भानटा ) & पाटील & फुल माळी & फुलमाळी & बंजरा & बंजारा & बारी & बारोड & बेलदार & बौद्ध & भटके जोशी & भिल & भिल्ल & मराठा & मराठा पाटील & मराठा(कुणबी) & मराठे & महाजन & महार & महार (सोनवणे ) & मातंग & माली & माळी & रंगारी & राजपूत & राजपूत पाटील & रेवा गुज्जर & लेवा पाटील & लेवा पाटीलदार & लेवापाटिल & लेवापाटीदार & वंजारी & शिंपी & सुतार & सूर्यवंशी गुजर & हटकर & हटकर धनगर & हटकर पाटील & हरीजन & हिंदू कुणबी & हिंदू कोळी & हिंदू मराठा & हिंदू लेवा पाटील & हिंदू-कुणबी & हिंदू-मराठा & हिंदू-माळी \\
+marital_status &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+\_ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+divorced & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+married & 17 & 0 & 1 & 1 & 1 & 1 & 1 & 2 & 1 & 1 & 0 & 1 & 1 & 0 & 2 & 0 & 33 & 24 & 4 & 0 & 1 & 1 & 15 & 1 & 1 & 2 & 2 & 1 & 5 & 1 & 1 & 1 & 1 & 1 & 0 & 2 & 1 & 3 & 0 & 0 & 1 & 1 & 8 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 6 & 3 & 5 & 1 & 6 & 2 & 1 & 1 & 2 & 1 & 1 & 0 & 28 & 6 & 1 & 2 & 1 & 4 & 1 & 1 & 0 & 3 & 1 & 8 & 1 & 0 & 2 & 1 & 1 & 1 & 2 & 1 & 1 & 2 & 3 & 3 & 1 & 1 & 1 & 2 & 2 & 1 & 1 & 1 & 1 \\
+unmarried & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 6 & 5 & 1 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 3 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for marital_status vs income_sources}
+\begin{table}
+\caption{Pivot Table for marital_status vs income_sources}
+\label{tab:marital_status_income_sources}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrr}
+\toprule
+income_sources & Other & Privatejob & agriculture & agriculture Other & agriculture Privatejob & agriculture Privatejob GovernmentJob & agriculture business & agriculture business GovernmentJob & agriculture business Pension & agriculture labour & agriculture labour GovernmentJob & agriculture labour Other & agriculture labour Pension & agriculture labour Privatejob & agriculture labour Privatejob GovernmentJob & agriculture labour Privatejob Other & agriculture labour business & labour & labour Other \\
+marital_status &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+\_ & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+divorced & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+married & 1 & 1 & 50 & 1 & 8 & 1 & 0 & 0 & 1 & 170 & 1 & 2 & 0 & 5 & 1 & 1 & 1 & 15 & 2 \\
+unmarried & 0 & 0 & 9 & 0 & 0 & 0 & 1 & 1 & 0 & 19 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 3 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for marital_status vs bpl_status}
+\begin{table}
+\caption{Pivot Table for marital_status vs bpl_status}
+\label{tab:marital_status_bpl_status}
+\begin{tabular}{lrr}
+\toprule
+bpl_status & no & yes \\
+marital_status &  &  \\
+\midrule
+\_ & 2 & 3 \\
+divorced & 1 & 2 \\
+married & 119 & 142 \\
+unmarried & 14 & 20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for marital_status vs ration_card}
+\begin{table}
+\caption{Pivot Table for marital_status vs ration_card}
+\label{tab:marital_status_ration_card}
+\begin{tabular}{lrrrr}
+\toprule
+ration_card & none & orange & white & yellow \\
+marital_status &  &  &  &  \\
+\midrule
+\_ & 0 & 2 & 1 & 2 \\
+divorced & 0 & 1 & 0 & 2 \\
+married & 5 & 133 & 4 & 119 \\
+unmarried & 0 & 19 & 1 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for marital_status vs loan_status}
+\begin{table}
+\caption{Pivot Table for marital_status vs loan_status}
+\label{tab:marital_status_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+marital_status &  &  \\
+\midrule
+\_ & 1 & 4 \\
+divorced & 0 & 3 \\
+married & 31 & 230 \\
+unmarried & 4 & 30 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for education vs religion}
+\begin{table}
+\caption{Pivot Table for education vs religion}
+\label{tab:education_religion}
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+religion & Hindu & बौद्ध & मुस्लिम & हिंदी & हिंदु & हिंदुं & हिंदू & हिंदू , कुणबी & हिंदू कुणबी & हिंदू गोर & हिदू & हिन्दु \\
+education &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+graduate & 0 & 0 & 1 & 0 & 2 & 0 & 14 & 0 & 0 & 0 & 0 & 0 \\
+higher\_secondary & 0 & 0 & 0 & 1 & 4 & 0 & 43 & 0 & 0 & 0 & 0 & 0 \\
+illiterate & 0 & 1 & 0 & 0 & 7 & 1 & 34 & 0 & 0 & 1 & 0 & 0 \\
+primary & 1 & 2 & 0 & 0 & 6 & 0 & 89 & 0 & 0 & 0 & 0 & 0 \\
+secondary & 0 & 1 & 0 & 0 & 5 & 0 & 86 & 1 & 1 & 0 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for education vs caste}
+\begin{table}
+\caption{Pivot Table for education vs caste}
+\label{tab:education_caste}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+\toprule
+caste & OBC & OBC हिंदू कुंभी & Open & SBC & ST & VJ & आठकर पाटील & ओबीसी & काच माळी & काचमाळी & कुंबि पाटील & कुंबि मराठा & कुंभार & कुंभी & कुंभी पाटील & कुंभी मराठा & कुणबी & कुणबी पाटील & कुणबी मराठा & कुनबी & कुमावत & कुम्बी & कोळी & खाटीक & गवळी & गुजर & गुर्जर & गोर  बंजारा & गोर बंजारा & गोरबंजारा & गोर्गांजरा & चांभार & चौधरी & जीरी माळी & टोकरी कोळी & टोकरे कोळी & तिरड कुणबी & तेली & तेली - & देवरे (पाटील) & दोडे गुजर & दोढे गुजर & धनगर & धनगर (पाटील) & धनगर NTC & न्हवी & न्हावी & पठान & परदेशी & परदेशी (भानटा ) & पाटील & फुल माळी & फुलमाळी & बंजरा & बंजारा & बारी & बारोड & बेलदार & बौद्ध & भटके जोशी & भिल & भिल्ल & मराठा & मराठा पाटील & मराठा(कुणबी) & मराठे & महाजन & महार & महार (सोनवणे ) & मातंग & माली & माळी & रंगारी & राजपूत & राजपूत पाटील & रेवा गुज्जर & लेवा पाटील & लेवा पाटीलदार & लेवापाटिल & लेवापाटीदार & वंजारी & शिंपी & सुतार & सूर्यवंशी गुजर & हटकर & हटकर धनगर & हटकर पाटील & हरीजन & हिंदू कुणबी & हिंदू कोळी & हिंदू मराठा & हिंदू लेवा पाटील & हिंदू-कुणबी & हिंदू-मराठा & हिंदू-माळी \\
+education &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+graduate & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 4 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+higher\_secondary & 3 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 7 & 8 & 1 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 2 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+illiterate & 4 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 4 & 2 & 1 & 0 & 0 & 0 & 2 & 0 & 0 & 1 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 2 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 2 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+primary & 4 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 2 & 0 & 10 & 6 & 2 & 1 & 0 & 0 & 9 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 2 & 0 & 1 & 0 & 0 & 5 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 3 & 2 & 0 & 2 & 2 & 1 & 0 & 1 & 0 & 1 & 1 & 9 & 2 & 0 & 0 & 1 & 2 & 0 & 1 & 0 & 2 & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 2 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+secondary & 6 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 16 & 12 & 1 & 0 & 1 & 1 & 3 & 1 & 0 & 1 & 0 & 0 & 2 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 4 & 0 & 2 & 0 & 2 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 10 & 2 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 2 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 2 & 1 & 1 & 1 & 0 & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for education vs income_sources}
+\begin{table}
+\caption{Pivot Table for education vs income_sources}
+\label{tab:education_income_sources}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrr}
+\toprule
+income_sources & Other & Privatejob & agriculture & agriculture Other & agriculture Privatejob & agriculture Privatejob GovernmentJob & agriculture business & agriculture business GovernmentJob & agriculture business Pension & agriculture labour & agriculture labour GovernmentJob & agriculture labour Other & agriculture labour Pension & agriculture labour Privatejob & agriculture labour Privatejob GovernmentJob & agriculture labour Privatejob Other & agriculture labour business & labour & labour Other \\
+education &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+graduate & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+higher\_secondary & 0 & 0 & 14 & 0 & 1 & 0 & 1 & 1 & 0 & 25 & 0 & 2 & 0 & 2 & 0 & 0 & 0 & 1 & 1 \\
+illiterate & 0 & 0 & 11 & 1 & 0 & 0 & 0 & 0 & 0 & 28 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 3 & 0 \\
+primary & 1 & 0 & 16 & 1 & 4 & 1 & 0 & 0 & 0 & 65 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 6 & 0 \\
+secondary & 0 & 1 & 16 & 0 & 3 & 0 & 0 & 0 & 1 & 65 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 7 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for education vs bpl_status}
+\begin{table}
+\caption{Pivot Table for education vs bpl_status}
+\label{tab:education_bpl_status}
+\begin{tabular}{lrr}
+\toprule
+bpl_status & no & yes \\
+education &  &  \\
+\midrule
+graduate & 9 & 8 \\
+higher\_secondary & 29 & 19 \\
+illiterate & 13 & 31 \\
+primary & 42 & 56 \\
+secondary & 43 & 53 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for education vs ration_card}
+\begin{table}
+\caption{Pivot Table for education vs ration_card}
+\label{tab:education_ration_card}
+\begin{tabular}{lrrrr}
+\toprule
+ration_card & none & orange & white & yellow \\
+education &  &  &  &  \\
+\midrule
+graduate & 0 & 13 & 0 & 4 \\
+higher\_secondary & 1 & 33 & 1 & 13 \\
+illiterate & 1 & 18 & 1 & 24 \\
+primary & 2 & 40 & 2 & 54 \\
+secondary & 1 & 51 & 2 & 42 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for education vs loan_status}
+\begin{table}
+\caption{Pivot Table for education vs loan_status}
+\label{tab:education_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+education &  &  \\
+\midrule
+graduate & 1 & 16 \\
+higher\_secondary & 5 & 43 \\
+illiterate & 4 & 40 \\
+primary & 18 & 80 \\
+secondary & 8 & 88 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for religion vs caste}
+\begin{table}
+\caption{Pivot Table for religion vs caste}
+\label{tab:religion_caste}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+\toprule
+caste & OBC & OBC हिंदू कुंभी & Open & SBC & ST & VJ & आठकर पाटील & ओबीसी & काच माळी & काचमाळी & कुंबि पाटील & कुंबि मराठा & कुंभार & कुंभी & कुंभी पाटील & कुंभी मराठा & कुणबी & कुणबी पाटील & कुणबी मराठा & कुनबी & कुमावत & कुम्बी & कोळी & खाटीक & गवळी & गुजर & गुर्जर & गोर  बंजारा & गोर बंजारा & गोरबंजारा & गोर्गांजरा & चांभार & चौधरी & जीरी माळी & टोकरी कोळी & टोकरे कोळी & तिरड कुणबी & तेली & तेली - & देवरे (पाटील) & दोडे गुजर & दोढे गुजर & धनगर & धनगर (पाटील) & धनगर NTC & न्हवी & न्हावी & पठान & परदेशी & परदेशी (भानटा ) & पाटील & फुल माळी & फुलमाळी & बंजरा & बंजारा & बारी & बारोड & बेलदार & बौद्ध & भटके जोशी & भिल & भिल्ल & मराठा & मराठा पाटील & मराठा(कुणबी) & मराठे & महाजन & महार & महार (सोनवणे ) & मातंग & माली & माळी & रंगारी & राजपूत & राजपूत पाटील & रेवा गुज्जर & लेवा पाटील & लेवा पाटीलदार & लेवापाटिल & लेवापाटीदार & वंजारी & शिंपी & सुतार & सूर्यवंशी गुजर & हटकर & हटकर धनगर & हटकर पाटील & हरीजन & हिंदू कुणबी & हिंदू कोळी & हिंदू मराठा & हिंदू लेवा पाटील & हिंदू-कुणबी & हिंदू-मराठा & हिंदू-माळी \\
+religion &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+Hindu & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+बौद्ध & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+मुस्लिम & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदु & 8 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 3 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदुं & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू & 9 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 2 & 1 & 1 & 2 & 1 & 38 & 27 & 5 & 1 & 1 & 1 & 14 & 1 & 1 & 2 & 0 & 1 & 5 & 1 & 1 & 1 & 1 & 0 & 1 & 2 & 1 & 3 & 1 & 1 & 1 & 1 & 11 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 7 & 3 & 5 & 0 & 6 & 1 & 1 & 2 & 0 & 1 & 1 & 1 & 27 & 6 & 1 & 2 & 1 & 3 & 1 & 1 & 1 & 3 & 1 & 9 & 1 & 1 & 2 & 1 & 1 & 1 & 2 & 1 & 1 & 2 & 3 & 2 & 1 & 0 & 1 & 2 & 2 & 1 & 1 & 1 & 1 \\
+हिंदू , कुणबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू कुणबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू गोर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिदू & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिन्दु & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for religion vs income_sources}
+\begin{table}
+\caption{Pivot Table for religion vs income_sources}
+\label{tab:religion_income_sources}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrr}
+\toprule
+income_sources & Other & Privatejob & agriculture & agriculture Other & agriculture Privatejob & agriculture Privatejob GovernmentJob & agriculture business & agriculture business GovernmentJob & agriculture business Pension & agriculture labour & agriculture labour GovernmentJob & agriculture labour Other & agriculture labour Pension & agriculture labour Privatejob & agriculture labour Privatejob GovernmentJob & agriculture labour Privatejob Other & agriculture labour business & labour & labour Other \\
+religion &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+Hindu & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+बौद्ध & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+मुस्लिम & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदु & 0 & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 8 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 \\
+हिंदुं & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू & 1 & 1 & 44 & 2 & 8 & 1 & 1 & 1 & 0 & 177 & 1 & 2 & 1 & 5 & 1 & 1 & 1 & 16 & 2 \\
+हिंदू , कुणबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू कुणबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू गोर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिदू & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिन्दु & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for religion vs bpl_status}
+\begin{table}
+\caption{Pivot Table for religion vs bpl_status}
+\label{tab:religion_bpl_status}
+\begin{tabular}{lrr}
+\toprule
+bpl_status & no & yes \\
+religion &  &  \\
+\midrule
+Hindu & 1 & 0 \\
+बौद्ध & 1 & 3 \\
+मुस्लिम & 1 & 0 \\
+हिंदी & 1 & 0 \\
+हिंदु & 9 & 15 \\
+हिंदुं & 0 & 1 \\
+हिंदू & 122 & 144 \\
+हिंदू , कुणबी & 1 & 0 \\
+हिंदू कुणबी & 0 & 1 \\
+हिंदू गोर & 0 & 1 \\
+हिदू & 0 & 1 \\
+हिन्दु & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for religion vs ration_card}
+\begin{table}
+\caption{Pivot Table for religion vs ration_card}
+\label{tab:religion_ration_card}
+\begin{tabular}{lrrrr}
+\toprule
+ration_card & none & orange & white & yellow \\
+religion &  &  &  &  \\
+\midrule
+Hindu & 0 & 0 & 0 & 1 \\
+बौद्ध & 0 & 1 & 0 & 3 \\
+मुस्लिम & 0 & 1 & 0 & 0 \\
+हिंदी & 0 & 1 & 0 & 0 \\
+हिंदु & 1 & 12 & 0 & 11 \\
+हिंदुं & 1 & 0 & 0 & 0 \\
+हिंदू & 3 & 139 & 6 & 118 \\
+हिंदू , कुणबी & 0 & 1 & 0 & 0 \\
+हिंदू कुणबी & 0 & 0 & 0 & 1 \\
+हिंदू गोर & 0 & 0 & 0 & 1 \\
+हिदू & 0 & 0 & 0 & 1 \\
+हिन्दु & 0 & 0 & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for religion vs loan_status}
+\begin{table}
+\caption{Pivot Table for religion vs loan_status}
+\label{tab:religion_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+religion &  &  \\
+\midrule
+Hindu & 0 & 1 \\
+बौद्ध & 0 & 4 \\
+मुस्लिम & 0 & 1 \\
+हिंदी & 0 & 1 \\
+हिंदु & 3 & 21 \\
+हिंदुं & 0 & 1 \\
+हिंदू & 33 & 233 \\
+हिंदू , कुणबी & 0 & 1 \\
+हिंदू कुणबी & 0 & 1 \\
+हिंदू गोर & 0 & 1 \\
+हिदू & 0 & 1 \\
+हिन्दु & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for caste vs income_sources}
+\begin{table}
+\caption{Pivot Table for caste vs income_sources}
+\label{tab:caste_income_sources}
+\begin{tabular}{lrrrrrrrrrrrrrrrrrrr}
+\toprule
+income_sources & Other & Privatejob & agriculture & agriculture Other & agriculture Privatejob & agriculture Privatejob GovernmentJob & agriculture business & agriculture business GovernmentJob & agriculture business Pension & agriculture labour & agriculture labour GovernmentJob & agriculture labour Other & agriculture labour Pension & agriculture labour Privatejob & agriculture labour Privatejob GovernmentJob & agriculture labour Privatejob Other & agriculture labour business & labour & labour Other \\
+caste &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+OBC & 0 & 0 & 7 & 0 & 1 & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+OBC हिंदू कुंभी & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Open & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+SBC & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ST & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+VJ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+आठकर पाटील & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ओबीसी & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+काच माळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+काचमाळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुंबि पाटील & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुंबि मराठा & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुंभार & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+कुंभी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुंभी पाटील & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुंभी मराठा & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुणबी & 0 & 1 & 6 & 0 & 0 & 0 & 0 & 0 & 0 & 27 & 1 & 1 & 0 & 2 & 0 & 1 & 0 & 2 & 0 \\
+कुणबी पाटील & 0 & 0 & 10 & 0 & 1 & 0 & 0 & 1 & 0 & 16 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+कुणबी मराठा & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुनबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुमावत & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कुम्बी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+कोळी & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 10 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 3 & 0 \\
+खाटीक & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+गवळी & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+गुजर & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+गुर्जर & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+गोर  बंजारा & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+गोर बंजारा & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+गोरबंजारा & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+गोर्गांजरा & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+चांभार & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+चौधरी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+जीरी माळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+टोकरी कोळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+टोकरे कोळी & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+तिरड कुणबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+तेली & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+तेली - & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+देवरे (पाटील) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+दोडे गुजर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+दोढे गुजर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+धनगर & 0 & 0 & 5 & 1 & 0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+धनगर (पाटील) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+धनगर NTC & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+न्हवी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+न्हावी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+पठान & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+परदेशी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+परदेशी (भानटा ) & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+पाटील & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+फुल माळी & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+फुलमाळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+बंजरा & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+बंजारा & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+बारी & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+बारोड & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+बेलदार & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+बौद्ध & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+भटके जोशी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+भिल & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+भिल्ल & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+मराठा & 0 & 0 & 5 & 1 & 1 & 0 & 0 & 0 & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+मराठा पाटील & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+मराठा(कुणबी) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+मराठे & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+महाजन & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+महार & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+महार (सोनवणे ) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+मातंग & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+माली & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+माळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+रंगारी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+राजपूत & 0 & 0 & 2 & 0 & 0 & 0 & 1 & 0 & 0 & 6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+राजपूत पाटील & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+रेवा गुज्जर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+लेवा पाटील & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+लेवा पाटीलदार & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+लेवापाटिल & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+लेवापाटीदार & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+वंजारी & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+शिंपी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+सुतार & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+सूर्यवंशी गुजर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हटकर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हटकर धनगर & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हटकर पाटील & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हरीजन & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू कुणबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू कोळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+हिंदू मराठा & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू लेवा पाटील & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू-कुणबी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+हिंदू-मराठा & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+हिंदू-माळी & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for caste vs bpl_status}
+\begin{table}
+\caption{Pivot Table for caste vs bpl_status}
+\label{tab:caste_bpl_status}
+\begin{tabular}{lrr}
+\toprule
+bpl_status & no & yes \\
+caste &  &  \\
+\midrule
+OBC & 3 & 14 \\
+OBC हिंदू कुंभी & 1 & 0 \\
+Open & 1 & 0 \\
+SBC & 1 & 0 \\
+ST & 0 & 1 \\
+VJ & 0 & 1 \\
+आठकर पाटील & 1 & 0 \\
+ओबीसी & 1 & 2 \\
+काच माळी & 1 & 0 \\
+काचमाळी & 0 & 1 \\
+कुंबि पाटील & 1 & 0 \\
+कुंबि मराठा & 2 & 0 \\
+कुंभार & 0 & 1 \\
+कुंभी & 0 & 1 \\
+कुंभी पाटील & 1 & 1 \\
+कुंभी मराठा & 0 & 1 \\
+कुणबी & 12 & 29 \\
+कुणबी पाटील & 18 & 12 \\
+कुणबी मराठा & 0 & 5 \\
+कुनबी & 1 & 0 \\
+कुमावत & 0 & 1 \\
+कुम्बी & 0 & 1 \\
+कोळी & 6 & 11 \\
+खाटीक & 0 & 1 \\
+गवळी & 0 & 1 \\
+गुजर & 1 & 1 \\
+गुर्जर & 2 & 0 \\
+गोर  बंजारा & 0 & 1 \\
+गोर बंजारा & 2 & 3 \\
+गोरबंजारा & 0 & 1 \\
+गोर्गांजरा & 0 & 1 \\
+चांभार & 0 & 1 \\
+चौधरी & 1 & 0 \\
+जीरी माळी & 1 & 0 \\
+टोकरी कोळी & 0 & 1 \\
+टोकरे कोळी & 1 & 1 \\
+तिरड कुणबी & 1 & 0 \\
+तेली & 1 & 2 \\
+तेली - & 1 & 0 \\
+देवरे (पाटील) & 1 & 0 \\
+दोडे गुजर & 1 & 0 \\
+दोढे गुजर & 1 & 0 \\
+धनगर & 7 & 5 \\
+धनगर (पाटील) & 1 & 0 \\
+धनगर NTC & 0 & 1 \\
+न्हवी & 0 & 1 \\
+न्हावी & 0 & 1 \\
+पठान & 1 & 0 \\
+परदेशी & 0 & 1 \\
+परदेशी (भानटा ) & 0 & 1 \\
+पाटील & 6 & 1 \\
+फुल माळी & 2 & 1 \\
+फुलमाळी & 3 & 2 \\
+बंजरा & 0 & 1 \\
+बंजारा & 2 & 4 \\
+बारी & 2 & 0 \\
+बारोड & 0 & 1 \\
+बेलदार & 1 & 1 \\
+बौद्ध & 1 & 1 \\
+भटके जोशी & 1 & 0 \\
+भिल & 1 & 0 \\
+भिल्ल & 0 & 1 \\
+मराठा & 14 & 15 \\
+मराठा पाटील & 3 & 3 \\
+मराठा(कुणबी) & 0 & 1 \\
+मराठे & 2 & 0 \\
+महाजन & 1 & 0 \\
+महार & 2 & 2 \\
+महार (सोनवणे ) & 0 & 1 \\
+मातंग & 0 & 1 \\
+माली & 0 & 1 \\
+माळी & 2 & 1 \\
+रंगारी & 1 & 0 \\
+राजपूत & 3 & 7 \\
+राजपूत पाटील & 1 & 0 \\
+रेवा गुज्जर & 1 & 0 \\
+लेवा पाटील & 2 & 0 \\
+लेवा पाटीलदार & 1 & 0 \\
+लेवापाटिल & 0 & 1 \\
+लेवापाटीदार & 0 & 1 \\
+वंजारी & 2 & 0 \\
+शिंपी & 1 & 0 \\
+सुतार & 1 & 0 \\
+सूर्यवंशी गुजर & 0 & 2 \\
+हटकर & 2 & 1 \\
+हटकर धनगर & 3 & 0 \\
+हटकर पाटील & 0 & 1 \\
+हरीजन & 0 & 1 \\
+हिंदू कुणबी & 1 & 1 \\
+हिंदू कोळी & 0 & 2 \\
+हिंदू मराठा & 0 & 2 \\
+हिंदू लेवा पाटील & 1 & 0 \\
+हिंदू-कुणबी & 0 & 1 \\
+हिंदू-मराठा & 0 & 1 \\
+हिंदू-माळी & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for caste vs ration_card}
+\begin{table}
+\caption{Pivot Table for caste vs ration_card}
+\label{tab:caste_ration_card}
+\begin{tabular}{lrrrr}
+\toprule
+ration_card & none & orange & white & yellow \\
+caste &  &  &  &  \\
+\midrule
+OBC & 0 & 7 & 0 & 10 \\
+OBC हिंदू कुंभी & 0 & 1 & 0 & 0 \\
+Open & 0 & 1 & 0 & 0 \\
+SBC & 0 & 1 & 0 & 0 \\
+ST & 0 & 0 & 0 & 1 \\
+VJ & 0 & 0 & 0 & 1 \\
+आठकर पाटील & 0 & 1 & 0 & 0 \\
+ओबीसी & 0 & 2 & 0 & 1 \\
+काच माळी & 0 & 1 & 0 & 0 \\
+काचमाळी & 0 & 0 & 0 & 1 \\
+कुंबि पाटील & 0 & 0 & 0 & 1 \\
+कुंबि मराठा & 0 & 2 & 0 & 0 \\
+कुंभार & 0 & 0 & 0 & 1 \\
+कुंभी & 0 & 0 & 0 & 1 \\
+कुंभी पाटील & 0 & 1 & 0 & 1 \\
+कुंभी मराठा & 0 & 1 & 0 & 0 \\
+कुणबी & 1 & 17 & 1 & 22 \\
+कुणबी पाटील & 1 & 18 & 1 & 10 \\
+कुणबी मराठा & 0 & 1 & 0 & 4 \\
+कुनबी & 0 & 1 & 0 & 0 \\
+कुमावत & 0 & 1 & 0 & 0 \\
+कुम्बी & 0 & 1 & 0 & 0 \\
+कोळी & 0 & 4 & 1 & 12 \\
+खाटीक & 0 & 0 & 0 & 1 \\
+गवळी & 0 & 0 & 0 & 1 \\
+गुजर & 0 & 1 & 0 & 1 \\
+गुर्जर & 1 & 1 & 0 & 0 \\
+गोर  बंजारा & 0 & 0 & 0 & 1 \\
+गोर बंजारा & 0 & 3 & 0 & 2 \\
+गोरबंजारा & 0 & 1 & 0 & 0 \\
+गोर्गांजरा & 0 & 0 & 0 & 1 \\
+चांभार & 0 & 1 & 0 & 0 \\
+चौधरी & 0 & 1 & 0 & 0 \\
+जीरी माळी & 0 & 1 & 0 & 0 \\
+टोकरी कोळी & 0 & 1 & 0 & 0 \\
+टोकरे कोळी & 0 & 0 & 0 & 2 \\
+तिरड कुणबी & 0 & 1 & 0 & 0 \\
+तेली & 0 & 1 & 0 & 2 \\
+तेली - & 0 & 1 & 0 & 0 \\
+देवरे (पाटील) & 0 & 1 & 0 & 0 \\
+दोडे गुजर & 0 & 1 & 0 & 0 \\
+दोढे गुजर & 0 & 1 & 0 & 0 \\
+धनगर & 0 & 7 & 0 & 5 \\
+धनगर (पाटील) & 0 & 1 & 0 & 0 \\
+धनगर NTC & 0 & 1 & 0 & 0 \\
+न्हवी & 0 & 0 & 0 & 1 \\
+न्हावी & 0 & 0 & 0 & 1 \\
+पठान & 0 & 1 & 0 & 0 \\
+परदेशी & 0 & 0 & 0 & 1 \\
+परदेशी (भानटा ) & 0 & 0 & 0 & 1 \\
+पाटील & 0 & 7 & 0 & 0 \\
+फुल माळी & 0 & 2 & 0 & 1 \\
+फुलमाळी & 0 & 3 & 0 & 2 \\
+बंजरा & 0 & 0 & 0 & 1 \\
+बंजारा & 0 & 1 & 2 & 3 \\
+बारी & 0 & 1 & 0 & 1 \\
+बारोड & 0 & 0 & 0 & 1 \\
+बेलदार & 0 & 1 & 0 & 1 \\
+बौद्ध & 0 & 1 & 0 & 1 \\
+भटके जोशी & 0 & 1 & 0 & 0 \\
+भिल & 0 & 0 & 1 & 0 \\
+भिल्ल & 0 & 0 & 0 & 1 \\
+मराठा & 2 & 13 & 0 & 14 \\
+मराठा पाटील & 0 & 4 & 0 & 2 \\
+मराठा(कुणबी) & 0 & 0 & 0 & 1 \\
+मराठे & 0 & 2 & 0 & 0 \\
+महाजन & 0 & 1 & 0 & 0 \\
+महार & 0 & 3 & 0 & 1 \\
+महार (सोनवणे ) & 0 & 0 & 0 & 1 \\
+मातंग & 0 & 0 & 0 & 1 \\
+माली & 0 & 0 & 0 & 1 \\
+माळी & 0 & 2 & 0 & 1 \\
+रंगारी & 0 & 0 & 0 & 1 \\
+राजपूत & 0 & 3 & 0 & 7 \\
+राजपूत पाटील & 0 & 1 & 0 & 0 \\
+रेवा गुज्जर & 0 & 1 & 0 & 0 \\
+लेवा पाटील & 0 & 2 & 0 & 0 \\
+लेवा पाटीलदार & 0 & 1 & 0 & 0 \\
+लेवापाटिल & 0 & 0 & 0 & 1 \\
+लेवापाटीदार & 0 & 1 & 0 & 0 \\
+वंजारी & 0 & 2 & 0 & 0 \\
+शिंपी & 0 & 1 & 0 & 0 \\
+सुतार & 0 & 1 & 0 & 0 \\
+सूर्यवंशी गुजर & 0 & 1 & 0 & 1 \\
+हटकर & 0 & 2 & 0 & 1 \\
+हटकर धनगर & 0 & 3 & 0 & 0 \\
+हटकर पाटील & 0 & 0 & 0 & 1 \\
+हरीजन & 0 & 0 & 0 & 1 \\
+हिंदू कुणबी & 0 & 1 & 0 & 1 \\
+हिंदू कोळी & 0 & 0 & 0 & 2 \\
+हिंदू मराठा & 0 & 2 & 0 & 0 \\
+हिंदू लेवा पाटील & 0 & 1 & 0 & 0 \\
+हिंदू-कुणबी & 0 & 1 & 0 & 0 \\
+हिंदू-मराठा & 0 & 1 & 0 & 0 \\
+हिंदू-माळी & 0 & 1 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for caste vs loan_status}
+\begin{table}
+\caption{Pivot Table for caste vs loan_status}
+\label{tab:caste_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+caste &  &  \\
+\midrule
+OBC & 0 & 17 \\
+OBC हिंदू कुंभी & 0 & 1 \\
+Open & 0 & 1 \\
+SBC & 0 & 1 \\
+ST & 0 & 1 \\
+VJ & 0 & 1 \\
+आठकर पाटील & 0 & 1 \\
+ओबीसी & 1 & 2 \\
+काच माळी & 0 & 1 \\
+काचमाळी & 1 & 0 \\
+कुंबि पाटील & 1 & 0 \\
+कुंबि मराठा & 0 & 2 \\
+कुंभार & 0 & 1 \\
+कुंभी & 0 & 1 \\
+कुंभी पाटील & 0 & 2 \\
+कुंभी मराठा & 0 & 1 \\
+कुणबी & 5 & 36 \\
+कुणबी पाटील & 5 & 25 \\
+कुणबी मराठा & 1 & 4 \\
+कुनबी & 0 & 1 \\
+कुमावत & 0 & 1 \\
+कुम्बी & 0 & 1 \\
+कोळी & 4 & 13 \\
+खाटीक & 0 & 1 \\
+गवळी & 1 & 0 \\
+गुजर & 1 & 1 \\
+गुर्जर & 0 & 2 \\
+गोर  बंजारा & 0 & 1 \\
+गोर बंजारा & 0 & 5 \\
+गोरबंजारा & 0 & 1 \\
+गोर्गांजरा & 0 & 1 \\
+चांभार & 0 & 1 \\
+चौधरी & 1 & 0 \\
+जीरी माळी & 0 & 1 \\
+टोकरी कोळी & 0 & 1 \\
+टोकरे कोळी & 1 & 1 \\
+तिरड कुणबी & 0 & 1 \\
+तेली & 1 & 2 \\
+तेली - & 0 & 1 \\
+देवरे (पाटील) & 0 & 1 \\
+दोडे गुजर & 0 & 1 \\
+दोढे गुजर & 0 & 1 \\
+धनगर & 4 & 8 \\
+धनगर (पाटील) & 0 & 1 \\
+धनगर NTC & 1 & 0 \\
+न्हवी & 0 & 1 \\
+न्हावी & 0 & 1 \\
+पठान & 0 & 1 \\
+परदेशी & 0 & 1 \\
+परदेशी (भानटा ) & 0 & 1 \\
+पाटील & 0 & 7 \\
+फुल माळी & 1 & 2 \\
+फुलमाळी & 0 & 5 \\
+बंजरा & 0 & 1 \\
+बंजारा & 0 & 6 \\
+बारी & 0 & 2 \\
+बारोड & 0 & 1 \\
+बेलदार & 0 & 2 \\
+बौद्ध & 0 & 2 \\
+भटके जोशी & 0 & 1 \\
+भिल & 1 & 0 \\
+भिल्ल & 0 & 1 \\
+मराठा & 0 & 29 \\
+मराठा पाटील & 1 & 5 \\
+मराठा(कुणबी) & 0 & 1 \\
+मराठे & 0 & 2 \\
+महाजन & 0 & 1 \\
+महार & 1 & 3 \\
+महार (सोनवणे ) & 1 & 0 \\
+मातंग & 0 & 1 \\
+माली & 0 & 1 \\
+माळी & 0 & 3 \\
+रंगारी & 0 & 1 \\
+राजपूत & 0 & 10 \\
+राजपूत पाटील & 0 & 1 \\
+रेवा गुज्जर & 0 & 1 \\
+लेवा पाटील & 0 & 2 \\
+लेवा पाटीलदार & 0 & 1 \\
+लेवापाटिल & 1 & 0 \\
+लेवापाटीदार & 0 & 1 \\
+वंजारी & 0 & 2 \\
+शिंपी & 0 & 1 \\
+सुतार & 0 & 1 \\
+सूर्यवंशी गुजर & 0 & 2 \\
+हटकर & 0 & 3 \\
+हटकर धनगर & 1 & 2 \\
+हटकर पाटील & 0 & 1 \\
+हरीजन & 0 & 1 \\
+हिंदू कुणबी & 0 & 2 \\
+हिंदू कोळी & 1 & 1 \\
+हिंदू मराठा & 0 & 2 \\
+हिंदू लेवा पाटील & 0 & 1 \\
+हिंदू-कुणबी & 0 & 1 \\
+हिंदू-मराठा & 0 & 1 \\
+हिंदू-माळी & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for income_sources vs bpl_status}
+\begin{table}
+\caption{Pivot Table for income_sources vs bpl_status}
+\label{tab:income_sources_bpl_status}
+\begin{tabular}{lrr}
+\toprule
+bpl_status & no & yes \\
+income_sources &  &  \\
+\midrule
+Other & 1 & 0 \\
+Privatejob & 0 & 1 \\
+agriculture & 31 & 29 \\
+agriculture Other & 0 & 2 \\
+agriculture Privatejob & 3 & 5 \\
+agriculture Privatejob GovernmentJob & 0 & 1 \\
+agriculture business & 1 & 0 \\
+agriculture business GovernmentJob & 1 & 0 \\
+agriculture business Pension & 0 & 1 \\
+agriculture labour & 86 & 109 \\
+agriculture labour GovernmentJob & 1 & 0 \\
+agriculture labour Other & 0 & 2 \\
+agriculture labour Pension & 1 & 0 \\
+agriculture labour Privatejob & 2 & 3 \\
+agriculture labour Privatejob GovernmentJob & 1 & 0 \\
+agriculture labour Privatejob Other & 0 & 1 \\
+agriculture labour business & 1 & 0 \\
+labour & 6 & 12 \\
+labour Other & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for income_sources vs ration_card}
+\begin{table}
+\caption{Pivot Table for income_sources vs ration_card}
+\label{tab:income_sources_ration_card}
+\begin{tabular}{lrrrr}
+\toprule
+ration_card & none & orange & white & yellow \\
+income_sources &  &  &  &  \\
+\midrule
+Other & 0 & 1 & 0 & 0 \\
+Privatejob & 0 & 0 & 0 & 1 \\
+agriculture & 1 & 37 & 0 & 22 \\
+agriculture Other & 0 & 0 & 0 & 2 \\
+agriculture Privatejob & 0 & 5 & 0 & 3 \\
+agriculture Privatejob GovernmentJob & 0 & 0 & 0 & 1 \\
+agriculture business & 0 & 1 & 0 & 0 \\
+agriculture business GovernmentJob & 0 & 0 & 1 & 0 \\
+agriculture business Pension & 0 & 0 & 0 & 1 \\
+agriculture labour & 3 & 98 & 4 & 90 \\
+agriculture labour GovernmentJob & 0 & 1 & 0 & 0 \\
+agriculture labour Other & 0 & 0 & 0 & 2 \\
+agriculture labour Pension & 0 & 1 & 0 & 0 \\
+agriculture labour Privatejob & 0 & 1 & 0 & 4 \\
+agriculture labour Privatejob GovernmentJob & 0 & 0 & 1 & 0 \\
+agriculture labour Privatejob Other & 0 & 0 & 0 & 1 \\
+agriculture labour business & 0 & 1 & 0 & 0 \\
+labour & 1 & 7 & 0 & 10 \\
+labour Other & 0 & 2 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for income_sources vs loan_status}
+\begin{table}
+\caption{Pivot Table for income_sources vs loan_status}
+\label{tab:income_sources_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+income_sources &  &  \\
+\midrule
+Other & 0 & 1 \\
+Privatejob & 1 & 0 \\
+agriculture & 5 & 55 \\
+agriculture Other & 1 & 1 \\
+agriculture Privatejob & 1 & 7 \\
+agriculture Privatejob GovernmentJob & 1 & 0 \\
+agriculture business & 0 & 1 \\
+agriculture business GovernmentJob & 0 & 1 \\
+agriculture business Pension & 0 & 1 \\
+agriculture labour & 20 & 175 \\
+agriculture labour GovernmentJob & 0 & 1 \\
+agriculture labour Other & 0 & 2 \\
+agriculture labour Pension & 0 & 1 \\
+agriculture labour Privatejob & 1 & 4 \\
+agriculture labour Privatejob GovernmentJob & 1 & 0 \\
+agriculture labour Privatejob Other & 0 & 1 \\
+agriculture labour business & 0 & 1 \\
+labour & 4 & 14 \\
+labour Other & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for bpl_status vs ration_card}
+\begin{table}
+\caption{Pivot Table for bpl_status vs ration_card}
+\label{tab:bpl_status_ration_card}
+\begin{tabular}{lrrrr}
+\toprule
+ration_card & none & orange & white & yellow \\
+bpl_status &  &  &  &  \\
+\midrule
+no & 3 & 117 & 5 & 11 \\
+yes & 2 & 38 & 1 & 126 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for bpl_status vs loan_status}
+\begin{table}
+\caption{Pivot Table for bpl_status vs loan_status}
+\label{tab:bpl_status_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+bpl_status &  &  \\
+\midrule
+no & 16 & 120 \\
+yes & 20 & 147 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Pivot Table for ration_card vs loan_status}
+\begin{table}
+\caption{Pivot Table for ration_card vs loan_status}
+\label{tab:ration_card_loan_status}
+\begin{tabular}{lrr}
+\toprule
+loan_status & no & yes \\
+ration_card &  &  \\
+\midrule
+none & 1 & 4 \\
+orange & 14 & 141 \\
+white & 1 & 5 \\
+yellow & 20 & 117 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{document}
