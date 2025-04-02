@@ -2,7 +2,7 @@
 title: "Survey Data Analysis of Farmers in Jalgaon District"
 author: "Manoj C. Patil"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: word_document
 ---
 
 ```{r setup, include=FALSE}
