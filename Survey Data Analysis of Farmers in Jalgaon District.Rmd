@@ -35,9 +35,10 @@ health_details <- read_excel(file_path, sheet = "health_details") %>% clean_name
 ## 3. Data Overview
 ### 3.1 Main Survey Data
 ```{r}
-dim(survey_main)
-skim(survey_main)  # Detailed summary
-kable(head(survey_main, 10), caption = "First 10 Rows of Main Survey Data")
+#survey_main$gender	marital_status	education	religion	caste
+#df_pivot <- survey_main %>% pivot_wider(names_from = gender, values_from = Value, values_fill = 0)
+#table(survey_main$gender)
+pivot_wider(survey_main,survey_main$gender)
 ```
 
 ### 3.2 Family Members
