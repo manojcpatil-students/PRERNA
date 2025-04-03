@@ -1,0 +1,240 @@
+---
+title: "Survey Data Analysis of Farmers in Jalgaon District"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+```{r}
+library(tidyverse)    # Data manipulation and visualization
+library(readxl)       # Read Excel files
+library(DT)           # Interactive tables
+library(dplyr)        # Data manipulation
+library(ggplot2)      # Visualization
+library(janitor)      # Clean column names
+library(skimr)        # Summary statistics
+library(knitr)        # To create formatted tables
+library(tidyr)
+library(summarytools)
+library(reshape2)
+```
+
+```{r}
+file_path <- "SurveyData.xlsx"  # Update with full path if needed
+survey_main <- read_excel(file_path, sheet = 1) %>% clean_names()
+family_members <- read_excel(file_path, sheet = "family_members") %>% clean_names()
+earning_members <- read_excel(file_path, sheet = "earning_members") %>% clean_names()
+family_responsibilities <- read_excel(file_path, sheet = "family_responsibilities") %>% clean_names()
+health_details <- read_excel(file_path, sheet = "health_details") %>% clean_names()
+```
+
+## 3. Data Overview
+### 3.1 Main Survey Data
+```{r}
+# Load required libraries
+library(tidyr)
+library(summarytools)
+library(reshape2)
+
+data <- survey_main
+
+# 1. Basic Summary Statistics for All Variables
+summary_stats <- summary(data)
+print(summary_stats)
+```
+```{r}
+# 2. Frequency Tables for Categorical Variables
+library(knitr)
+library(kableExtra)
+library(tidyr)
+library(dplyr)
+
+categorical_vars <- c("gender", "marital_status", "education", "religion", "caste", 
+                      "income_sources", "bpl_status", "ration_card", "loan_status")
+
+# Generate frequency tables for LaTeX
+for (var in categorical_vars) {
+  cat("\nFrequency Table for", var, ":\n")
+  freq_table <- table(data[[var]], useNA = "ifany")
+  
+  # Convert to data frame
+  df <- as.data.frame(freq_table)
+  colnames(df) <- c(var, "Count")
+  
+  # Print table in LaTeX format
+  print(kable(df, booktabs = TRUE, caption = paste("Frequency Table for", var)))
+}
+
+# Generate all possible pivot tables (cross-tabulations)
+combinations <- combn(categorical_vars, 2, simplify = FALSE)
+
+for (combo in combinations) {
+  cat("\nPivot Table for", combo[1], "vs", combo[2], ":\n")
+  pivot_table <- table(data[[combo[1]]], data[[combo[2]]])
+  
+  # Convert to data frame for LaTeX output
+  df_pivot <- as.data.frame(pivot_table)
+  colnames(df_pivot) <- c(combo[1], combo[2], "Count")
+  
+  # Print pivot table in LaTeX format
+  print(kable(df_pivot, booktabs = TRUE, caption = paste("Pivot Table for", combo[1], "vs", combo[2])))
+}
+
+```
+
+```{r}
+# 3. Numerical Variable Summaries
+numerical_vars <- c("age", "total_family_members")
+
+for (var in numerical_vars) {
+  cat("\nSummary for", var, ":\n")
+  print(summary(data[[var]], na.rm = TRUE))
+  
+  # Histogram for numerical variables
+  ggplot(data, aes(x = .data[[var]])) +
+    geom_histogram(binwidth = 5, fill = "blue", color = "black") +
+    labs(title = paste("Histogram of", var), x = var, y = "Count") +
+    theme_minimal()
+  ggsave(paste("histogram_", var, ".png", sep = ""))
+}
+
+
+```
+
+
+```{r}
+
+```
+
+
+
+```{r}
+# 4. Pivot Tables
+# Example: Pivot table for income_sources vs bpl_status
+pivot_income_bpl <- data %>%
+  group_by(income_sources, bpl_status) %>%
+  summarise(Count = n(), .groups = "drop") %>%
+  pivot_wider(names_from = bpl_status, values_from = Count, values_fill = 0)
+print("Pivot Table: Income Sources vs BPL Status")
+print(pivot_income_bpl)
+
+# Pivot table for gender vs marital_status
+pivot_gender_marital <- data %>%
+  group_by(gender, marital_status) %>%
+  summarise(Count = n(), .groups = "drop") %>%
+  pivot_wider(names_from = marital_status, values_from = Count, values_fill = 0)
+print("Pivot Table: Gender vs Marital Status")
+print(pivot_gender_marital)
+
+# Pivot table for education vs annual_income
+pivot_edu_income <- data %>%
+  group_by(education, annual_income) %>%
+  summarise(Count = n(), .groups = "drop") %>%
+  pivot_wider(names_from = annual_income, values_from = Count, values_fill = 0)
+print("Pivot Table: Education vs Annual Income")
+print(pivot_edu_income)
+```
+
+
+
+```{r}
+
+```
+
+
+```{r}
+
+
+# 5. Correlation Analysis for Numerical Variables
+cor_matrix <- cor(data[, numerical_vars], use = "complete.obs")
+print("Correlation Matrix for Numerical Variables:")
+print(cor_matrix)
+
+# Heatmap of correlations
+ggplot(melt(cor_matrix), aes(Var1, Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 0) +
+  labs(title = "Correlation Heatmap", x = "", y = "") +
+  theme_minimal()
+ggsave("correlation_heatmap.png")
+
+# 6. Boxplots for Numerical Variables by Categorical Variables
+# Example: Age by Gender
+ggplot(data, aes(x = gender, y = age)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(title = "Boxplot of Age by Gender", x = "Gender", y = "Age") +
+  theme_minimal()
+ggsave("boxplot_age_gender.png")
+
+# Example: Annual Income by Education
+ggplot(data, aes(x = education, y = annual_income)) +
+  geom_boxplot(fill = "lightgreen") +
+  labs(title = "Boxplot of Annual Income by Education", x = "Education", y = "Annual Income") +
+  theme_minimal()
+ggsave("boxplot_income_education.png")
+
+# 7. Missing Data Analysis
+missing_data <- colSums(is.na(data))
+print("Missing Data Count per Variable:")
+print(missing_data)
+
+# Visualize missing data
+ggplot(data.frame(Variable = names(missing_data), Missing = missing_data), 
+       aes(x = reorder(Variable, Missing), y = Missing)) +
+  geom_bar(stat = "identity", fill = "red") +
+  coord_flip() +
+  labs(title = "Missing Data by Variable", x = "Variable", y = "Number of Missing Values") +
+  theme_minimal()
+ggsave("missing_data_plot.png")
+
+# 8. Cross-Tabulation with Multiple Variables
+# Example: Gender, Marital Status, and BPL Status
+cross_tab <- table(data$gender, data$marital_status, data$bpl_status)
+print("Cross-Tabulation: Gender, Marital Status, and BPL Status")
+print(cross_tab)
+
+# 9. Advanced Visualizations
+# Scatter plot: Age vs Annual Income colored by Gender
+ggplot(data, aes(x = age, y = annual_income, color = gender)) +
+  geom_point(alpha = 0.5) +
+  labs(title = "Scatter Plot: Age vs Annual Income by Gender", x = "Age", y = "Annual Income") +
+  theme_minimal()
+ggsave("scatter_age_income_gender.png")
+
+# Bar plot: Count of Farmers by Village
+ggplot(data, aes(x = village)) +
+  geom_bar(fill = "purple") +
+  labs(title = "Count of Farmers by Village", x = "Village", y = "Count") +
+  theme_minimal() +
+  coord_flip()
+ggsave("bar_village_count.png")
+
+# 10. Save All Results to a File
+sink("eda_results.txt")
+print(summary_stats)
+for (var in categorical_vars) {
+  cat("\nFrequency Table for", var, ":\n")
+  print(table(data[[var]], useNA = "ifany"))
+}
+for (var in numerical_vars) {
+  cat("\nSummary for", var, ":\n")
+  print(summary(data[[var]], na.rm = TRUE))
+}
+print("Pivot Table: Income Sources vs BPL Status")
+print(pivot_income_bpl)
+print("Pivot Table: Gender vs Marital Status")
+print(pivot_gender_marital)
+print("Pivot Table: Education vs Annual Income")
+print(pivot_edu_income)
+print("Correlation Matrix for Numerical Variables:")
+print(cor_matrix)
+print("Missing Data Count per Variable:")
+print(missing_data)
+print("Cross-Tabulation: Gender, Marital Status, and BPL Status")
+print(cross_tab)
+sink()
+```

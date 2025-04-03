@@ -1,0 +1,196 @@
+---
+title: "Objective1_Devyani"
+author: "2308-Bhosle Devyani Sunil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+# Load necessary libraries
+```{r}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(psych)
+```
+
+# Load the dataset
+```{r}
+file_path <- "SurveyData.xlsx"
+df <- read_excel("SurveyData.xlsx", sheet = 1)
+```
+
+# View first few rows
+```{r}
+head(df)
+```
+
+# Check the structure of the dataset
+```{r}
+str(df)
+```
+
+# Check for missing values
+```{r}
+colSums(is.na(df))
+```
+
+# Summary statistics for numerical variables
+```{r}
+#summary(select_if(df, is.numeric))
+selected_columns <- c(5, 16, 83)  # Replace with actual column indices
+summary(df[, selected_columns])
+```
+
+# Visualizations
+## Histogram for Age
+```{r}
+ggplot(df, aes(x = age)) + 
+  geom_histogram(binwidth = 5, fill = "blue", color = "black") +
+  theme_minimal() + 
+  labs(title = "Age Distribution", x = "Age", y = "Count")
+```
+
+
+## Bar plot for Gender
+```{r}
+ggplot(df, aes(x = gender)) + 
+  geom_bar(fill = "orange", color = "black") +
+  theme_minimal() + 
+  labs(title = "Gender Distribution", x = "Gender", y = "Count")
+```
+
+# Factor Analysis
+## Define the recoding scheme
+```{r}
+likert_mapping <- c("strongly_agree" = 5, "agree" = 4, "neutral" = 3, "disagree" = 2, "strongly_disagree" = 1)
+```
+
+## Select columns to recode (update column numbers or names as needed)
+```{r}
+likert_columns <- df[, 122:140]
+```
+
+## Apply recoding \& Recode the selected columns
+```{r}
+recode_likert <- function(x) {
+  as.numeric(likert_mapping[as.character(x)])}
+
+df[, 122:140] <- lapply(likert_columns, recode_likert)
+
+summary(df[, 122:140])
+```
+
+## Select columns for factor analysis (columns 122 to 140)
+```{r}
+factor_data <- df[, 122:140]
+
+factor_data <- na.omit(factor_data)  # Remove rows with NA values
+head(factor_data)
+```
+
+## Perform Bartlett's test of sphericity
+```{r}
+bartlett.test(factor_data)
+```
+# Conclusions:
+Bartlett’s test of sphericity was conducted to assess whether the correlation matrix significantly differs from an identity matrix, indicating the suitability of the data for factor analysis. The test yielded a $\chi^2$ value of 691.34 with 18 degrees of freedom and a p-value $<$ 2.2e-16.
+
+Since the p-value is highly significant ($p < 0.05$), we reject the null hypothesis, which assumes that the variables are uncorrelated. This suggests that the dataset contains sufficient intercorrelations to justify the application of Factor Analysis. Thus, the data is suitable for dimensionality reduction and latent factor extraction.
+
+## Perform Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy
+```{r}
+KMO(factor_data)
+```
+# Conclusions:
+## Kaiser-Meyer-Olkin (KMO) Measure of Sampling Adequacy
+
+The **Kaiser-Meyer-Olkin (KMO) test** was conducted to evaluate the suitability of the dataset for **factor analysis**. The **overall KMO measure** was found to be **0.80**, indicating **good adequacy** for factor analysis.
+
+### Individual Measure of Sampling Adequacy (MSA)
+
+The **MSA values** for each variable are as follows:
+
+| Variable                    | MSA  |
+|-----------------------------|------|
+| low_market_price            | 0.77 |
+| climate_change              | 0.88 |
+| irrigation_problem          | 0.78 |
+| high_fertilizer_cost        | 0.83 |
+| lack_of_govt_support        | 0.86 |
+| labour_cost                 | 0.80 |
+| middleman_exploitation      | 0.76 |
+| high_production_cost        | 0.85 |
+| inflation_stress            | 0.79 |
+| lack_of_processing_units    | 0.74 |
+| electricity_issue           | 0.48 |
+| no_minimum_price            | 0.80 |
+| no_farm_loan                | 0.81 |
+| pest_disease                | 0.83 |
+| disaster_damage             | 0.85 |
+| no_compensation             | 0.86 |
+| storage_marketing_issue     | 0.81 |
+| lack_of_family_support      | 0.64 |
+| tech_resistance             | 0.74 |
+
+### Interpretation of KMO Results
+
+- A **KMO value above 0.80** is considered **very good** for factor analysis.  
+- **Most variables have MSA values above 0.75**, supporting their inclusion in factor analysis.  
+- The variable *electricity_issue* has a lower MSA (0.48), indicating that it may not contribute significantly to a strong factor structure.  
+
+### Conclusion
+
+The **overall KMO value of 0.80** confirms that the dataset is **suitable for factor analysis**. However, careful consideration should be given to variables with lower MSA scores, as they may not contribute well to the factor model.
+
+## Perform Factor Analysis using Principal Axis Factoring
+```{r}
+fa_result <- fa(factor_data, nfactors = 3, rotate = "varimax")  # Adjust number of factors as needed
+```
+
+## Print factor loadings
+```{r}
+print(fa_result$loadings)
+```
+# Conclusions for factor loadings:
+The **factor analysis results** reveal the underlying structure of the dataset with three extracted factors (**MR1, MR2, and MR3**). The interpretation of these factors is based on the **factor loadings**, which indicate the strength of each variable’s association with a particular factor.
+
+- **Factor MR1** has high loadings on *climate_change* (0.652), *high_fertilizer_cost* (0.631), *labour_cost* (0.599), *high_production_cost* (0.595), *disaster_damage* (0.599), and *pest_disease* (0.548).  
+  - This suggests that **MR1 represents economic and environmental challenges** faced by the respondents.
+
+- **Factor MR2** is mainly associated with *no_farm_loan* (0.548), *lack_of_family_support* (0.514), and *tech_resistance* (0.542).  
+  - This factor reflects **financial constraints and social support issues**.
+
+- **Factor MR3** has its highest loading on *lack_of_processing_units* (0.846) and moderate loadings on *electricity_issue* (0.337).  
+  - This factor represents **infrastructure and resource-related issues**.
+
+### Factor Variance Explained
+
+The **SS loadings** indicate the relative importance of each factor:
+
+- **MR1 explains 17.5% of the variance**  
+- **MR2 explains 8.4% of the variance**  
+- **MR3 explains 5.3% of the variance**  
+
+The **cumulative variance explained by the three factors is 31.1%**, suggesting that these factors capture a meaningful portion of the dataset’s variability but may not fully account for all underlying structures.
+
+### Summary of Key Dimensions
+
+Based on these findings, the dataset can be grouped into three key dimensions:
+
+1. **Economic and Environmental Challenges (MR1)**
+2. **Financial and Social Constraints (MR2)**
+3. **Infrastructure and Resource Limitations (MR3)**
+
+These factors provide valuable insights into the major challenges present in the dataset, supporting the use of factor analysis for dimensionality reduction.
+
+
+
+## Visualize factor loadings
+```{r}
+fa.diagram(fa_result)
+```
+
