@@ -1,0 +1,29 @@
+Scale,Item,Median,Mode,IQR
+Depression,depression_1,2.0,2,2.0
+Depression,depression_2,1.0,1,1.0
+Depression,depression_3,2.0,1,1.0
+Depression,depression_4,1.0,1,2.0
+Depression,depression_5,1.0,1,1.0
+Anxiety,anxiety_1,2.0,2,1.0
+Anxiety,anxiety_2,1.0,1,2.0
+Anxiety,anxiety_3,2.0,2,2.0
+Anxiety,anxiety_4,2.0,2,2.0
+Social Support,social_support_1,3.0,3,1.0
+Social Support,social_support_2,2.0,3,2.0
+Social Support,social_support_3,2.0,2,2.0
+Social Support,social_support_4,1.0,0,1.0
+Suicidal Ideation,suicidal_ideation_1,0.0,0,1.0
+Suicidal Ideation,suicidal_ideation_2,1.0,0,1.0
+Suicidal Ideation,suicidal_ideation_3,0.0,0,1.0
+Financial Stress,financial_stress_1,2.0,3,2.0
+Financial Stress,financial_stress_2,1.0,0,1.0
+Financial Stress,financial_stress_3,1.0,1,2.0
+Financial Stress,financial_stress_4,1.0,0,2.0
+Coping,coping_1,2.0,3,2.0
+Coping,coping_2,2.0,3,1.0
+Coping,coping_3,2.0,3,1.0
+Coping,coping_4,0.0,0,2.0
+Life Satisfaction,life_satisfaction_1,2.0,3,2.0
+Life Satisfaction,life_satisfaction_2,1.0,1,1.0
+Life Satisfaction,life_satisfaction_3,1.0,1,1.0
+Life Satisfaction,life_satisfaction_4,2.0,1,2.0
