@@ -48,19 +48,28 @@ summary(df[, selected_columns])
 # Visualizations
 ## Histogram for Age
 ```{r}
-ggplot(df, aes(x = age)) + 
-  geom_histogram(binwidth = 5, fill = "blue", color = "black") +
+ggplot(df, aes(x = age, fill = gender)) + 
+  geom_histogram(binwidth = 5, color = "black", position = "dodge") +
   theme_minimal() + 
   labs(title = "Age Distribution", x = "Age", y = "Count")
+
 ```
+
+```{r}
+
+```
+
 
 
 ## Bar plot for Gender
 ```{r}
-ggplot(df, aes(x = gender)) + 
-  geom_bar(fill = "orange", color = "black") +
+ggplot(df, aes(x = age)) + 
+  geom_histogram(aes(y = ..density..), binwidth = 5, fill = "lightblue", color = "black", alpha = 0.6) +
+  geom_density(color = "red", size = 1) +
   theme_minimal() + 
-  labs(title = "Gender Distribution", x = "Gender", y = "Count")
+  labs(title = "Demographic Age Pattern of Farmer Suicides", x = "Age", y = "Density")
+ggsave("media/Demographic_Age_Pattern_of_Farmer_Suicides.png", width = 8, height = 6, dpi = 300)
+
 ```
 
 # Factor Analysis
@@ -71,7 +80,7 @@ likert_mapping <- c("strongly_agree" = 5, "agree" = 4, "neutral" = 3, "disagree"
 
 ## Select columns to recode (update column numbers or names as needed)
 ```{r}
-likert_columns <- df[, 122:140]
+likert_columns <- df[, 124:142]
 ```
 
 ## Apply recoding \& Recode the selected columns
@@ -79,14 +88,14 @@ likert_columns <- df[, 122:140]
 recode_likert <- function(x) {
   as.numeric(likert_mapping[as.character(x)])}
 
-df[, 122:140] <- lapply(likert_columns, recode_likert)
+df[, 124:142] <- lapply(likert_columns, recode_likert)
 
-summary(df[, 122:140])
+summary(df[, 124:142])
 ```
 
 ## Select columns for factor analysis (columns 122 to 140)
 ```{r}
-factor_data <- df[, 122:140]
+factor_data <- df[, 124:142]
 
 factor_data <- na.omit(factor_data)  # Remove rows with NA values
 head(factor_data)

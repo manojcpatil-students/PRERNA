@@ -27,7 +27,7 @@ library(dplyr)
 # Load the Dataset
 ```{r}
 
-data <- read_excel("C:\\Users\\hp\\Documents\\GitHub\\PRERNA\\SurveyData.xlsx",sheet=1)
+data <- read_excel("SurveyData.xlsx",sheet=1)
 
 ```
 
